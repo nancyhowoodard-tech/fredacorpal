@@ -6,7 +6,7 @@ import { CTASection, PageHero, Section, SectionHeader } from "@/components/Primi
 import { careers } from "@/data/site";
 import { seoHead } from "@/lib/seo";
 
-export const Route = createFileRoute("/careers")({
+export const Route = createFileRoute("/careers/")({
   head: () =>
     seoHead({
       title: "Careers | Join the Fredacorpal™ Workforce",
