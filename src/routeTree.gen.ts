@@ -10,33 +10,129 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesCustomerSupportRouteImport } from './routes/services.customer-support'
+import { Route as ServicesPaidMediaRouteImport } from './routes/services.paid-media'
+import { Route as ServicesSeoRouteImport } from './routes/services.seo'
+import { Route as ServicesSocialMediaRouteImport } from './routes/services.social-media'
+import { Route as ServicesTechnicalSolutionsRouteImport } from './routes/services.technical-solutions'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesCustomerSupportRoute = ServicesCustomerSupportRouteImport.update({
+  id: '/services/customer-support',
+  path: '/services/customer-support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesPaidMediaRoute = ServicesPaidMediaRouteImport.update({
+  id: '/services/paid-media',
+  path: '/services/paid-media',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesSeoRoute = ServicesSeoRouteImport.update({
+  id: '/services/seo',
+  path: '/services/seo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesSocialMediaRoute = ServicesSocialMediaRouteImport.update({
+  id: '/services/social-media',
+  path: '/services/social-media',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesTechnicalSolutionsRoute =
+  ServicesTechnicalSolutionsRouteImport.update({
+    id: '/services/technical-solutions',
+    path: '/services/technical-solutions',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/services/customer-support': typeof ServicesCustomerSupportRoute
+  '/services/paid-media': typeof ServicesPaidMediaRoute
+  '/services/seo': typeof ServicesSeoRoute
+  '/services/social-media': typeof ServicesSocialMediaRoute
+  '/services/technical-solutions': typeof ServicesTechnicalSolutionsRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/services/customer-support': typeof ServicesCustomerSupportRoute
+  '/services/paid-media': typeof ServicesPaidMediaRoute
+  '/services/seo': typeof ServicesSeoRoute
+  '/services/social-media': typeof ServicesSocialMediaRoute
+  '/services/technical-solutions': typeof ServicesTechnicalSolutionsRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/services/customer-support': typeof ServicesCustomerSupportRoute
+  '/services/paid-media': typeof ServicesPaidMediaRoute
+  '/services/seo': typeof ServicesSeoRoute
+  '/services/social-media': typeof ServicesSocialMediaRoute
+  '/services/technical-solutions': typeof ServicesTechnicalSolutionsRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/services/customer-support'
+    | '/services/paid-media'
+    | '/services/seo'
+    | '/services/social-media'
+    | '/services/technical-solutions'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/services/customer-support'
+    | '/services/paid-media'
+    | '/services/seo'
+    | '/services/social-media'
+    | '/services/technical-solutions'
+    | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/services/customer-support'
+    | '/services/paid-media'
+    | '/services/seo'
+    | '/services/social-media'
+    | '/services/technical-solutions'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ServicesCustomerSupportRoute: typeof ServicesCustomerSupportRoute
+  ServicesPaidMediaRoute: typeof ServicesPaidMediaRoute
+  ServicesSeoRoute: typeof ServicesSeoRoute
+  ServicesSocialMediaRoute: typeof ServicesSocialMediaRoute
+  ServicesTechnicalSolutionsRoute: typeof ServicesTechnicalSolutionsRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +144,68 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/customer-support': {
+      id: '/services/customer-support'
+      path: '/services/customer-support'
+      fullPath: '/services/customer-support'
+      preLoaderRoute: typeof ServicesCustomerSupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/paid-media': {
+      id: '/services/paid-media'
+      path: '/services/paid-media'
+      fullPath: '/services/paid-media'
+      preLoaderRoute: typeof ServicesPaidMediaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/seo': {
+      id: '/services/seo'
+      path: '/services/seo'
+      fullPath: '/services/seo'
+      preLoaderRoute: typeof ServicesSeoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/social-media': {
+      id: '/services/social-media'
+      path: '/services/social-media'
+      fullPath: '/services/social-media'
+      preLoaderRoute: typeof ServicesSocialMediaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/technical-solutions': {
+      id: '/services/technical-solutions'
+      path: '/services/technical-solutions'
+      fullPath: '/services/technical-solutions'
+      preLoaderRoute: typeof ServicesTechnicalSolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ServicesCustomerSupportRoute: ServicesCustomerSupportRoute,
+  ServicesPaidMediaRoute: ServicesPaidMediaRoute,
+  ServicesSeoRoute: ServicesSeoRoute,
+  ServicesSocialMediaRoute: ServicesSocialMediaRoute,
+  ServicesTechnicalSolutionsRoute: ServicesTechnicalSolutionsRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
