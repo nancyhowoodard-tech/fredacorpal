@@ -93,8 +93,8 @@ function Contact() {
                   Full Name
                 </label>
                 <input id="name" name="name" className={fieldClass} placeholder="Jane Okoro" />
-                {errors.name ? (
-                  <p className="mt-2 text-xs text-destructive">{errors.name}</p>
+                {errors["name"] ? (
+                  <p className="mt-2 text-xs text-destructive">{errors["name"]}</p>
                 ) : null}
               </div>
               <div>
@@ -102,8 +102,8 @@ function Contact() {
                   Company
                 </label>
                 <input id="company" name="company" className={fieldClass} placeholder="Acme Group" />
-                {errors.company ? (
-                  <p className="mt-2 text-xs text-destructive">{errors.company}</p>
+                {errors["company"] ? (
+                  <p className="mt-2 text-xs text-destructive">{errors["company"]}</p>
                 ) : null}
               </div>
               <div>
@@ -111,8 +111,8 @@ function Contact() {
                   Email
                 </label>
                 <input id="email" name="email" type="email" className={fieldClass} placeholder="you@company.com" />
-                {errors.email ? (
-                  <p className="mt-2 text-xs text-destructive">{errors.email}</p>
+                {errors["email"] ? (
+                  <p className="mt-2 text-xs text-destructive">{errors["email"]}</p>
                 ) : null}
               </div>
               <div>
@@ -135,8 +135,8 @@ function Contact() {
                     </option>
                   ))}
                 </select>
-                {errors.service ? (
-                  <p className="mt-2 text-xs text-destructive">{errors.service}</p>
+                {errors["service"] ? (
+                  <p className="mt-2 text-xs text-destructive">{errors["service"]}</p>
                 ) : null}
               </div>
               <div>
@@ -153,8 +153,8 @@ function Contact() {
                     </option>
                   ))}
                 </select>
-                {errors.budget ? (
-                  <p className="mt-2 text-xs text-destructive">{errors.budget}</p>
+                {errors["budget"] ? (
+                  <p className="mt-2 text-xs text-destructive">{errors["budget"]}</p>
                 ) : null}
               </div>
               <div className="sm:col-span-2">
@@ -168,8 +168,8 @@ function Contact() {
                   className={fieldClass}
                   placeholder="Describe your current infrastructure and the outcome you need."
                 />
-                {errors.message ? (
-                  <p className="mt-2 text-xs text-destructive">{errors.message}</p>
+                {errors["message"] ? (
+                  <p className="mt-2 text-xs text-destructive">{errors["message"]}</p>
                 ) : null}
               </div>
 

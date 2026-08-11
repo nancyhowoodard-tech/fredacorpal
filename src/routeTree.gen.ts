@@ -11,9 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as PartnershipsRouteImport } from './routes/partnerships'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as StaffPortalRouteImport } from './routes/staff-portal'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as CareersIndexRouteImport } from './routes/careers.index'
 import { Route as CareersCustomerCareRouteImport } from './routes/careers.customer-care'
 import { Route as CareersSeoExpertRouteImport } from './routes/careers.seo-expert'
@@ -35,6 +39,11 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndustriesRoute = IndustriesRouteImport.update({
   id: '/industries',
   path: '/industries',
@@ -48,6 +57,21 @@ const PartnershipsRoute = PartnershipsRouteImport.update({
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StaffPortalRoute = StaffPortalRouteImport.update({
+  id: '/staff-portal',
+  path: '/staff-portal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CareersIndexRoute = CareersIndexRouteImport.update({
@@ -106,9 +130,13 @@ const ServicesTechnicalSolutionsRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/partnerships': typeof PartnershipsRoute
   '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/staff-portal': typeof StaffPortalRoute
+  '/terms': typeof TermsRoute
   '/careers/customer-care': typeof CareersCustomerCareRoute
   '/careers/seo-expert': typeof CareersSeoExpertRoute
   '/careers/social-media-manager': typeof CareersSocialMediaManagerRoute
@@ -123,9 +151,13 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/partnerships': typeof PartnershipsRoute
   '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/staff-portal': typeof StaffPortalRoute
+  '/terms': typeof TermsRoute
   '/careers/customer-care': typeof CareersCustomerCareRoute
   '/careers/seo-expert': typeof CareersSeoExpertRoute
   '/careers/social-media-manager': typeof CareersSocialMediaManagerRoute
@@ -141,9 +173,13 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/partnerships': typeof PartnershipsRoute
   '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/staff-portal': typeof StaffPortalRoute
+  '/terms': typeof TermsRoute
   '/careers/customer-care': typeof CareersCustomerCareRoute
   '/careers/seo-expert': typeof CareersSeoExpertRoute
   '/careers/social-media-manager': typeof CareersSocialMediaManagerRoute
@@ -160,9 +196,13 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/contact'
     | '/industries'
     | '/partnerships'
     | '/pricing'
+    | '/privacy'
+    | '/staff-portal'
+    | '/terms'
     | '/careers/customer-care'
     | '/careers/seo-expert'
     | '/careers/social-media-manager'
@@ -177,9 +217,13 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/contact'
     | '/industries'
     | '/partnerships'
     | '/pricing'
+    | '/privacy'
+    | '/staff-portal'
+    | '/terms'
     | '/careers/customer-care'
     | '/careers/seo-expert'
     | '/careers/social-media-manager'
@@ -194,9 +238,13 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/contact'
     | '/industries'
     | '/partnerships'
     | '/pricing'
+    | '/privacy'
+    | '/staff-portal'
+    | '/terms'
     | '/careers/customer-care'
     | '/careers/seo-expert'
     | '/careers/social-media-manager'
@@ -212,9 +260,13 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
   IndustriesRoute: typeof IndustriesRoute
   PartnershipsRoute: typeof PartnershipsRoute
   PricingRoute: typeof PricingRoute
+  PrivacyRoute: typeof PrivacyRoute
+  StaffPortalRoute: typeof StaffPortalRoute
+  TermsRoute: typeof TermsRoute
   CareersCustomerCareRoute: typeof CareersCustomerCareRoute
   CareersSeoExpertRoute: typeof CareersSeoExpertRoute
   CareersSocialMediaManagerRoute: typeof CareersSocialMediaManagerRoute
@@ -243,6 +295,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/industries': {
       id: '/industries'
       path: '/industries'
@@ -262,6 +321,27 @@ declare module '@tanstack/react-router' {
       path: '/pricing'
       fullPath: '/pricing'
       preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/staff-portal': {
+      id: '/staff-portal'
+      path: '/staff-portal'
+      fullPath: '/staff-portal'
+      preLoaderRoute: typeof StaffPortalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/careers/': {
@@ -340,9 +420,13 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
   IndustriesRoute: IndustriesRoute,
   PartnershipsRoute: PartnershipsRoute,
   PricingRoute: PricingRoute,
+  PrivacyRoute: PrivacyRoute,
+  StaffPortalRoute: StaffPortalRoute,
+  TermsRoute: TermsRoute,
   CareersCustomerCareRoute: CareersCustomerCareRoute,
   CareersSeoExpertRoute: CareersSeoExpertRoute,
   CareersSocialMediaManagerRoute: CareersSocialMediaManagerRoute,
@@ -357,13 +441,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
