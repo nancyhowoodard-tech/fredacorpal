@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
 const inquirySchema = z.object({
   name: z.string().trim().min(2).max(100),
@@ -29,6 +30,38 @@ export const submitInquiry = createServerFn({ method: "POST" })
     if (error) {
       console.error("Failed to store inquiry", error);
       throw new Error("We could not record your inquiry. Please try again.");
+    }
+
+    const resendKey = process.env["RESEND_API_KEY"];
+    if (resendKey) {
+      try {
+        const res = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${resendKey}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from: process.env["INQUIRY_FROM_EMAIL"] ?? "Fredacorpal <onboarding@resend.dev>",
+            to: [CONTACT_EMAIL],
+            reply_to: data.email,
+            subject: `New inquiry — ${data.service} — ${data.company}`,
+            text: [
+              `Name: ${data.name}`,
+              `Company: ${data.company}`,
+              `Email: ${data.email}`,
+              `Phone: ${data.phone || "—"}`,
+              `Service: ${data.service}`,
+              `Budget: ${data.budget}`,
+              "",
+              data.message,
+            ].join("\n"),
+          }),
+        });
+        if (!res.ok) console.error("Inquiry email failed", res.status, await res.text());
+      } catch (mailError) {
+        console.error("Inquiry email failed", mailError);
+      }
     }
 
     return { ok: true as const };
