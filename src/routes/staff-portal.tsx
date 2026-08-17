@@ -1,10 +1,12 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { ShieldCheck } from "lucide-react";
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { Button } from "@/components/Button";
+import { supabase } from "@/integrations/supabase/client";
 import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/staff-portal")({
+  ssr: false,
   head: () =>
     seoHead({
       title: "Staff Portal | Fredacorpal™ Integrated Services",
@@ -19,13 +21,35 @@ const fieldClass =
   "mt-2 w-full rounded-md border border-white/20 bg-white/5 px-4 py-3 text-sm text-white transition-colors placeholder:text-white/40 focus:border-gold focus:outline-none";
 
 function StaffPortal() {
+  const navigate = useNavigate();
   const [message, setMessage] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
-  const submit = (e: FormEvent<HTMLFormElement>) => {
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      if (data.session) navigate({ to: "/dashboard", replace: true });
+    });
+  }, [navigate]);
+
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setMessage(
-      "Credentials could not be verified. Authentication is not yet enabled on this environment — contact your project lead for access.",
-    );
+    setMessage(null);
+    setLoading(true);
+    const fd = new FormData(e.currentTarget);
+
+    const { error } = await supabase.auth.signInWithPassword({
+      email: String(fd.get("email")).trim(),
+      password: String(fd.get("password")),
+    });
+
+    setLoading(false);
+    if (error) {
+      setMessage(
+        "Credentials could not be verified. Confirm your staff email and password, or contact your project lead.",
+      );
+      return;
+    }
+    navigate({ to: "/dashboard", replace: true });
   };
 
   return (
@@ -50,12 +74,13 @@ function StaffPortal() {
 
           <form onSubmit={submit} className="mt-8 grid gap-5">
             <div>
-              <label htmlFor="staff-id" className="text-sm font-semibold">
-                Email / Staff ID
+              <label htmlFor="email" className="text-sm font-semibold">
+                Staff Email
               </label>
               <input
-                id="staff-id"
-                name="staffId"
+                id="email"
+                name="email"
+                type="email"
                 required
                 autoComplete="username"
                 className={fieldClass}
@@ -77,15 +102,15 @@ function StaffPortal() {
               />
             </div>
 
-            <Button type="submit" size="lg">
-              Sign In
+            <Button type="submit" size="lg" disabled={loading}>
+              {loading ? "Verifying…" : "Sign In"}
             </Button>
 
             <Link
               to="/contact"
               className="text-center text-xs text-white/60 transition-colors hover:text-gold"
             >
-              Forgot Password
+              Need access? Contact your project lead
             </Link>
           </form>
 
@@ -99,7 +124,7 @@ function StaffPortal() {
 
           <p className="mt-6 text-[0.7rem] leading-relaxed text-white/40">
             All access attempts are subject to monitoring under Fredacorpal™ security
-            policy.
+            policy. Accounts are issued by administrators only.
           </p>
         </div>
       </div>

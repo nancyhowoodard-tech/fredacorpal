@@ -26,7 +26,7 @@ function Careers() {
         description="Elite Talent. Remote Opportunity. Global Impact."
         breadcrumbs={[{ label: "Careers" }]}
       >
-        <ButtonLink to="/contact" size="lg">
+        <ButtonLink to="/apply" size="lg">
           Apply Now
         </ButtonLink>
         <ButtonLink to="/about" variant="light" size="lg">
@@ -71,7 +71,7 @@ function Careers() {
       <CTASection
         title="Ready to join the network?"
         description="Submit an application and reference the role you are targeting."
-        primary={{ label: "Apply Now", to: "/contact" }}
+        primary={{ label: "Apply Now", to: "/apply" }}
         secondary={{ label: "See Services", to: "/services" }}
       />
     </>

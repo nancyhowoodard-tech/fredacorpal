@@ -12,7 +12,7 @@ export function CareerDetail({ job }: { job: Career }) {
         description={job.summary}
         breadcrumbs={[{ label: "Careers", to: "/careers" }, { label: job.title }]}
       >
-        <ButtonLink to="/contact" size="lg">
+        <ButtonLink to="/apply" size="lg">
           Apply Now
         </ButtonLink>
         <ButtonLink to="/careers" variant="light" size="lg">
@@ -108,7 +108,7 @@ export function CareerDetail({ job }: { job: Career }) {
                 relevant service area and reference this role in your message.
               </p>
               <div className="mt-6 grid gap-2">
-                <ButtonLink to="/contact" size="lg">
+                <ButtonLink to="/apply" size="lg">
                   Apply Now
                 </ButtonLink>
                 <ButtonLink to="/about" variant="outline" size="sm">
@@ -123,7 +123,7 @@ export function CareerDetail({ job }: { job: Career }) {
       <CTASection
         title="Elite talent. Remote opportunity. Global impact."
         description="Explore every open position across the Fredacorpal delivery network."
-        primary={{ label: "Apply Now", to: "/contact" }}
+        primary={{ label: "Apply Now", to: "/apply" }}
         secondary={{ label: "Join Our Team", to: "/careers" }}
       />
     </>

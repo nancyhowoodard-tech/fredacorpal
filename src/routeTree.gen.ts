@@ -10,7 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ApplyRouteImport } from './routes/apply'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as PartnershipsRouteImport } from './routes/partnerships'
@@ -18,6 +20,9 @@ import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as StaffPortalRouteImport } from './routes/staff-portal'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
+import { Route as AuthenticatedTeamRouteImport } from './routes/_authenticated/team'
+import { Route as ApiSupportChatRouteImport } from './routes/api/support-chat'
 import { Route as CareersIndexRouteImport } from './routes/careers.index'
 import { Route as CareersCustomerCareRouteImport } from './routes/careers.customer-care'
 import { Route as CareersSeoExpertRouteImport } from './routes/careers.seo-expert'
@@ -34,9 +39,18 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApplyRoute = ApplyRouteImport.update({
+  id: '/apply',
+  path: '/apply',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -72,6 +86,21 @@ const StaffPortalRoute = StaffPortalRouteImport.update({
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedTeamRoute = AuthenticatedTeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const ApiSupportChatRoute = ApiSupportChatRouteImport.update({
+  id: '/api/support-chat',
+  path: '/api/support-chat',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CareersIndexRoute = CareersIndexRouteImport.update({
@@ -130,6 +159,7 @@ const ServicesTechnicalSolutionsRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/apply': typeof ApplyRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/partnerships': typeof PartnershipsRoute
@@ -137,6 +167,9 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/staff-portal': typeof StaffPortalRoute
   '/terms': typeof TermsRoute
+  '/dashboard': typeof AuthenticatedDashboardRoute
+  '/team': typeof AuthenticatedTeamRoute
+  '/api/support-chat': typeof ApiSupportChatRoute
   '/careers/customer-care': typeof CareersCustomerCareRoute
   '/careers/seo-expert': typeof CareersSeoExpertRoute
   '/careers/social-media-manager': typeof CareersSocialMediaManagerRoute
@@ -151,6 +184,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/apply': typeof ApplyRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/partnerships': typeof PartnershipsRoute
@@ -158,6 +192,9 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/staff-portal': typeof StaffPortalRoute
   '/terms': typeof TermsRoute
+  '/dashboard': typeof AuthenticatedDashboardRoute
+  '/team': typeof AuthenticatedTeamRoute
+  '/api/support-chat': typeof ApiSupportChatRoute
   '/careers/customer-care': typeof CareersCustomerCareRoute
   '/careers/seo-expert': typeof CareersSeoExpertRoute
   '/careers/social-media-manager': typeof CareersSocialMediaManagerRoute
@@ -172,7 +209,9 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/about': typeof AboutRoute
+  '/apply': typeof ApplyRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/partnerships': typeof PartnershipsRoute
@@ -180,6 +219,9 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/staff-portal': typeof StaffPortalRoute
   '/terms': typeof TermsRoute
+  '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
+  '/_authenticated/team': typeof AuthenticatedTeamRoute
+  '/api/support-chat': typeof ApiSupportChatRoute
   '/careers/customer-care': typeof CareersCustomerCareRoute
   '/careers/seo-expert': typeof CareersSeoExpertRoute
   '/careers/social-media-manager': typeof CareersSocialMediaManagerRoute
@@ -196,6 +238,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/apply'
     | '/contact'
     | '/industries'
     | '/partnerships'
@@ -203,6 +246,9 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/staff-portal'
     | '/terms'
+    | '/dashboard'
+    | '/team'
+    | '/api/support-chat'
     | '/careers/customer-care'
     | '/careers/seo-expert'
     | '/careers/social-media-manager'
@@ -217,6 +263,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/apply'
     | '/contact'
     | '/industries'
     | '/partnerships'
@@ -224,6 +271,9 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/staff-portal'
     | '/terms'
+    | '/dashboard'
+    | '/team'
+    | '/api/support-chat'
     | '/careers/customer-care'
     | '/careers/seo-expert'
     | '/careers/social-media-manager'
@@ -237,7 +287,9 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
     | '/about'
+    | '/apply'
     | '/contact'
     | '/industries'
     | '/partnerships'
@@ -245,6 +297,9 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/staff-portal'
     | '/terms'
+    | '/_authenticated/dashboard'
+    | '/_authenticated/team'
+    | '/api/support-chat'
     | '/careers/customer-care'
     | '/careers/seo-expert'
     | '/careers/social-media-manager'
@@ -259,7 +314,9 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
+  ApplyRoute: typeof ApplyRoute
   ContactRoute: typeof ContactRoute
   IndustriesRoute: typeof IndustriesRoute
   PartnershipsRoute: typeof PartnershipsRoute
@@ -267,6 +324,7 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   StaffPortalRoute: typeof StaffPortalRoute
   TermsRoute: typeof TermsRoute
+  ApiSupportChatRoute: typeof ApiSupportChatRoute
   CareersCustomerCareRoute: typeof CareersCustomerCareRoute
   CareersSeoExpertRoute: typeof CareersSeoExpertRoute
   CareersSocialMediaManagerRoute: typeof CareersSocialMediaManagerRoute
@@ -288,11 +346,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/apply': {
+      id: '/apply'
+      path: '/apply'
+      fullPath: '/apply'
+      preLoaderRoute: typeof ApplyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -342,6 +414,27 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/dashboard': {
+      id: '/_authenticated/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof AuthenticatedDashboardRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/team': {
+      id: '/_authenticated/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof AuthenticatedTeamRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/api/support-chat': {
+      id: '/api/support-chat'
+      path: '/api/support-chat'
+      fullPath: '/api/support-chat'
+      preLoaderRoute: typeof ApiSupportChatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/careers/': {
@@ -417,9 +510,24 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
+  AuthenticatedTeamRoute: typeof AuthenticatedTeamRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedDashboardRoute: AuthenticatedDashboardRoute,
+  AuthenticatedTeamRoute: AuthenticatedTeamRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
+  ApplyRoute: ApplyRoute,
   ContactRoute: ContactRoute,
   IndustriesRoute: IndustriesRoute,
   PartnershipsRoute: PartnershipsRoute,
@@ -427,6 +535,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   StaffPortalRoute: StaffPortalRoute,
   TermsRoute: TermsRoute,
+  ApiSupportChatRoute: ApiSupportChatRoute,
   CareersCustomerCareRoute: CareersCustomerCareRoute,
   CareersSeoExpertRoute: CareersSeoExpertRoute,
   CareersSocialMediaManagerRoute: CareersSocialMediaManagerRoute,
