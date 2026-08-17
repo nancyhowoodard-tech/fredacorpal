@@ -1,9 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useState, type FormEvent } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { Button } from "@/components/Button";
 import { PageHero, Section, SectionHeader } from "@/components/Primitives";
+import { CONTACT_EMAIL } from "@/lib/constants";
+import { submitInquiry } from "@/lib/inquiries.functions";
 import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/contact")({
@@ -50,9 +53,11 @@ const fieldClass =
 
 function Contact() {
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "success" | "error" | "sending">("idle");
+  const [serverError, setServerError] = useState<string | null>(null);
+  const send = useServerFn(submitInquiry);
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
@@ -70,8 +75,19 @@ function Contact() {
     }
 
     setErrors({});
-    setStatus("success");
-    form.reset();
+    setServerError(null);
+    setStatus("sending");
+
+    try {
+      await send({ data: result.data });
+      setStatus("success");
+      form.reset();
+    } catch (err) {
+      setServerError(
+        err instanceof Error ? err.message : "We could not send your inquiry. Please try again.",
+      );
+      setStatus("error");
+    }
   };
 
   return (
@@ -174,8 +190,8 @@ function Contact() {
               </div>
 
               <div className="sm:col-span-2">
-                <Button type="submit" size="lg">
-                  Submit Inquiry
+                <Button type="submit" size="lg" disabled={status === "sending"}>
+                  {status === "sending" ? "Sending…" : "Submit Inquiry"}
                 </Button>
               </div>
 
@@ -187,7 +203,7 @@ function Contact() {
                 ) : null}
                 {status === "error" ? (
                   <p className="rounded-md border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm text-destructive">
-                    Please correct the highlighted fields and submit again.
+                    {serverError ?? "Please correct the highlighted fields and submit again."}
                   </p>
                 ) : null}
               </div>
@@ -202,10 +218,10 @@ function Contact() {
                 <span>
                   <span className="block font-semibold">Email</span>
                   <a
-                    href="mailto:hello@fredacorpal.com"
+                    href={`mailto:${CONTACT_EMAIL}`}
                     className="text-muted-foreground transition-colors hover:text-gold"
                   >
-                    hello@fredacorpal.com
+                    {CONTACT_EMAIL}
                   </a>
                 </span>
               </li>
@@ -214,10 +230,10 @@ function Contact() {
                 <span>
                   <span className="block font-semibold">Partnerships</span>
                   <a
-                    href="mailto:partners@fredacorpal.com"
+                    href={`mailto:${CONTACT_EMAIL}`}
                     className="text-muted-foreground transition-colors hover:text-gold"
                   >
-                    partners@fredacorpal.com
+                    {CONTACT_EMAIL}
                   </a>
                 </span>
               </li>

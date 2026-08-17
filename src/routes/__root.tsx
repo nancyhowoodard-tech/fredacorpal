@@ -13,6 +13,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ButtonLink } from "@/components/Button";
+import { ChatBot } from "@/components/ChatBot";
 
 const themeScript = `(function(){try{var s=localStorage.getItem('fcp-theme');var t=s||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');if(t==='dark'){document.documentElement.classList.add('dark');}document.documentElement.style.colorScheme=t;}catch(e){}})();`;
 
@@ -135,6 +136,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
+        <ChatBot />
       </div>
     </QueryClientProvider>
   );
