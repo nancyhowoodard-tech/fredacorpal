@@ -228,7 +228,7 @@ function Contact() {
               <li className="flex gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
                 <span>
-                  <span className="block font-semibold">Partnerships</span>
+                  <span className="block font-semibold">Support</span>
                   <a
                     href={`mailto:${CONTACT_EMAIL}`}
                     className="text-muted-foreground transition-colors hover:text-gold"

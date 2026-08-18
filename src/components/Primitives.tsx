@@ -6,9 +6,13 @@ import { Reveal } from "./Motion";
 export function Logo({ light = false }: { light?: boolean }) {
   return (
     <span className="flex items-center gap-2">
-      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-md border border-gold/60 bg-gold/10 font-display text-sm font-bold text-gold">
-        F
-      </span>
+      <img
+        src={logoAsset.url}
+        alt="Fredacorpal Integrated Services logo"
+        className="h-9 w-9 shrink-0 rounded-full object-contain"
+        width={36}
+        height={36}
+      />
       <span className="min-w-0">
         <span
           className={cn(
