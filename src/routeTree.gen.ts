@@ -29,6 +29,7 @@ import { Route as CareersSeoExpertRouteImport } from './routes/careers.seo-exper
 import { Route as CareersSocialMediaManagerRouteImport } from './routes/careers.social-media-manager'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesCustomerSupportRouteImport } from './routes/services.customer-support'
+import { Route as ServicesFinancialAdvisoryRouteImport } from './routes/services.financial-advisory'
 import { Route as ServicesPaidMediaRouteImport } from './routes/services.paid-media'
 import { Route as ServicesSeoRouteImport } from './routes/services.seo'
 import { Route as ServicesSocialMediaRouteImport } from './routes/services.social-media'
@@ -134,6 +135,12 @@ const ServicesCustomerSupportRoute = ServicesCustomerSupportRouteImport.update({
   path: '/services/customer-support',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesFinancialAdvisoryRoute =
+  ServicesFinancialAdvisoryRouteImport.update({
+    id: '/services/financial-advisory',
+    path: '/services/financial-advisory',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServicesPaidMediaRoute = ServicesPaidMediaRouteImport.update({
   id: '/services/paid-media',
   path: '/services/paid-media',
@@ -174,6 +181,7 @@ export interface FileRoutesByFullPath {
   '/careers/seo-expert': typeof CareersSeoExpertRoute
   '/careers/social-media-manager': typeof CareersSocialMediaManagerRoute
   '/services/customer-support': typeof ServicesCustomerSupportRoute
+  '/services/financial-advisory': typeof ServicesFinancialAdvisoryRoute
   '/services/paid-media': typeof ServicesPaidMediaRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/social-media': typeof ServicesSocialMediaRoute
@@ -199,6 +207,7 @@ export interface FileRoutesByTo {
   '/careers/seo-expert': typeof CareersSeoExpertRoute
   '/careers/social-media-manager': typeof CareersSocialMediaManagerRoute
   '/services/customer-support': typeof ServicesCustomerSupportRoute
+  '/services/financial-advisory': typeof ServicesFinancialAdvisoryRoute
   '/services/paid-media': typeof ServicesPaidMediaRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/social-media': typeof ServicesSocialMediaRoute
@@ -226,6 +235,7 @@ export interface FileRoutesById {
   '/careers/seo-expert': typeof CareersSeoExpertRoute
   '/careers/social-media-manager': typeof CareersSocialMediaManagerRoute
   '/services/customer-support': typeof ServicesCustomerSupportRoute
+  '/services/financial-advisory': typeof ServicesFinancialAdvisoryRoute
   '/services/paid-media': typeof ServicesPaidMediaRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/social-media': typeof ServicesSocialMediaRoute
@@ -253,6 +263,7 @@ export interface FileRouteTypes {
     | '/careers/seo-expert'
     | '/careers/social-media-manager'
     | '/services/customer-support'
+    | '/services/financial-advisory'
     | '/services/paid-media'
     | '/services/seo'
     | '/services/social-media'
@@ -278,6 +289,7 @@ export interface FileRouteTypes {
     | '/careers/seo-expert'
     | '/careers/social-media-manager'
     | '/services/customer-support'
+    | '/services/financial-advisory'
     | '/services/paid-media'
     | '/services/seo'
     | '/services/social-media'
@@ -304,6 +316,7 @@ export interface FileRouteTypes {
     | '/careers/seo-expert'
     | '/careers/social-media-manager'
     | '/services/customer-support'
+    | '/services/financial-advisory'
     | '/services/paid-media'
     | '/services/seo'
     | '/services/social-media'
@@ -329,6 +342,7 @@ export interface RootRouteChildren {
   CareersSeoExpertRoute: typeof CareersSeoExpertRoute
   CareersSocialMediaManagerRoute: typeof CareersSocialMediaManagerRoute
   ServicesCustomerSupportRoute: typeof ServicesCustomerSupportRoute
+  ServicesFinancialAdvisoryRoute: typeof ServicesFinancialAdvisoryRoute
   ServicesPaidMediaRoute: typeof ServicesPaidMediaRoute
   ServicesSeoRoute: typeof ServicesSeoRoute
   ServicesSocialMediaRoute: typeof ServicesSocialMediaRoute
@@ -479,6 +493,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesCustomerSupportRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/financial-advisory': {
+      id: '/services/financial-advisory'
+      path: '/services/financial-advisory'
+      fullPath: '/services/financial-advisory'
+      preLoaderRoute: typeof ServicesFinancialAdvisoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/paid-media': {
       id: '/services/paid-media'
       path: '/services/paid-media'
@@ -540,6 +561,7 @@ const rootRouteChildren: RootRouteChildren = {
   CareersSeoExpertRoute: CareersSeoExpertRoute,
   CareersSocialMediaManagerRoute: CareersSocialMediaManagerRoute,
   ServicesCustomerSupportRoute: ServicesCustomerSupportRoute,
+  ServicesFinancialAdvisoryRoute: ServicesFinancialAdvisoryRoute,
   ServicesPaidMediaRoute: ServicesPaidMediaRoute,
   ServicesSeoRoute: ServicesSeoRoute,
   ServicesSocialMediaRoute: ServicesSocialMediaRoute,

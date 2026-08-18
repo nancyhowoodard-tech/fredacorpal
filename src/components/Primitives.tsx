@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import logoAsset from "@/assets/fredacorpal-logo.png.asset.json";
 import { cn } from "@/lib/utils";
 import { ButtonLink } from "./Button";
 import { Reveal } from "./Motion";
