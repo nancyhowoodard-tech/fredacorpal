@@ -56,20 +56,51 @@ function Careers() {
         </div>
       </Section>
 
-      <Section tone="surface">
-        <SectionHeader eyebrow="Working Here" title="What to expect" align="center" />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { t: "Remote by design", b: "Distributed teams with defined coverage windows." },
-            { t: "Structured onboarding", b: "Certification against client brand and product standards." },
-            { t: "Quality supervision", b: "Coaching cycles and scorecards, not silent evaluation." },
-            { t: "Global exposure", b: "Work with enterprises across multiple markets." },
-          ].map((c, i) => (
-            <Reveal key={c.t} delay={i * 60}>
-              <div className="h-full rounded-lg border border-border bg-card p-6">
-                <h3 className="font-display text-base font-bold">{c.t}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.b}</p>
-              </div>
+      <Section tone="surface" id="perks">
+        <SectionHeader
+          eyebrow="Working Here"
+          title="What to Expect - Perks and Benefits"
+          description="A complete package built around compensation, flexibility, wellbeing, growth and long-term financial security."
+          align="center"
+        />
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {careerBenefits.map((b, i) => (
+            <Reveal key={b.slug} delay={i * 60}>
+              <article className="flex h-full flex-col rounded-lg border border-border bg-card p-6 transition-all duration-300 hover:border-gold/60 hover:shadow-elevate">
+                <h3 className="font-display text-lg font-bold">{b.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {b.description}
+                </p>
+                <ul className="mt-5 flex-1 space-y-2 text-sm text-muted-foreground">
+                  {b.subcategories.map((s) => (
+                    <li key={s} className="flex gap-2">
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-gold" aria-hidden="true" />
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+                <details className="group mt-6 border-t border-border pt-4">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-semibold text-gold">
+                    Learn More
+                    <span
+                      aria-hidden="true"
+                      className="transition-transform duration-300 group-open:rotate-45"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <dl className="mt-4 space-y-4">
+                    {b.details.map((d) => (
+                      <div key={d.title}>
+                        <dt className="text-sm font-semibold">{d.title}</dt>
+                        <dd className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                          {d.body}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </details>
+              </article>
             </Reveal>
           ))}
         </div>
