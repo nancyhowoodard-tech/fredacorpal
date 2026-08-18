@@ -3,7 +3,7 @@ import { ButtonLink } from "@/components/Button";
 import { JobCard } from "@/components/Cards";
 import { Reveal } from "@/components/Motion";
 import { CTASection, PageHero, Section, SectionHeader } from "@/components/Primitives";
-import { careers } from "@/data/site";
+import { careerBenefits, careers } from "@/data/site";
 import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/careers/")({
