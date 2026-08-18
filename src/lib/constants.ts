@@ -1,4 +1,7 @@
-export const CONTACT_EMAIL = "help.fredacorpalrecruitments@gmail.com";
+export const CONTACT_EMAIL = "ithelpdesk.fredacorpal@gmail.com";
+
+/** Email used for recruitment/application enquiries. */
+export const RECRUITMENT_EMAIL = "help.fredacorpalrecruitments@gmail.com";
 
 /** Google Form used for all recruitment applications. */
 export const APPLY_FORM_URL = "https://forms.gle/av4BhbFVCsQe7iD19";
