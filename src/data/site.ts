@@ -322,6 +322,87 @@ export const services: Service[] = [
     metaDescription:
       "Technical infrastructure, performance engineering, integrations, automation and digital implementation for enterprise growth.",
   },
+  {
+    slug: "financial-advisory",
+    index: "06",
+    title: "Strategic Financial Advisory & Management",
+    short:
+      "Empower your organization with rigorous capital planning, financial governance, and operational oversight to drive sustainable growth and enterprise value.",
+    to: "/services/financial-advisory",
+    ctaLabel: "Explore Financial Advisory",
+    headline: "Financial Infrastructure Built for Enterprise Value",
+    problem:
+      "Rapidly scaling enterprises and complex business operations frequently encounter strategic drag due to fragmented financial planning, opaque cash-flow visibility, and ad-hoc governance. Without institutional-grade oversight, organizations risk capital inefficiency, compliance exposure, and poor strategic decision-making that erodes profit margins.",
+    whatWeDo:
+      "We provide end-to-end financial stewardship, aligning your balance sheet with long-term commercial strategy. Our practice delivers high-level corporate finance advisory, capital structure optimization, continuous treasury management, and executive-level financial reporting tailored to your corporate goals.",
+    methodology: [
+      {
+        title: "Data Aggregation & Integration",
+        body: "Unifying disparate accounting ERPs and banking streams into a central financial intelligence platform.",
+      },
+      {
+        title: "Custom Risk & Ratio Models",
+        body: "Tailoring risk-mitigation frameworks and performance metrics specific to your operational vertical.",
+      },
+      {
+        title: "Governance Integration",
+        body: "Embedding automated controls, approval hierarchies, and reporting cadences into your daily workflows.",
+      },
+    ],
+    deliverables: [
+      "Executive Financial Dashboard: Real-time visibility into liquidity, EBITDA, working capital, and operational burn rates.",
+      "Rolling 13-Week & Multi-Year Forecasts: Dynamic cash-flow modeling and scenario analyses for revenue projections and capital requirements.",
+      "Board-Ready Reporting Packs: Comprehensive monthly and quarterly financial review decks designed for stakeholders and investors.",
+      "Custom Financial Policies: Formalized operational procedures covering expense management, risk policy, and capital allocation.",
+    ],
+    benefits: [
+      "Capital Efficiency: Optimized working capital cycles that unlock dormant cash reserves.",
+      "Strategic Precision: Fact-based financial modeling that eliminates guesswork in investment decisions.",
+      "Governance & Compliance: Institutional-grade audit readiness and robust internal risk controls.",
+      "Predictable Scalability: Clear unit economics and forecasting models built to support sustainable growth.",
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Diagnostic Assessment",
+        body: "Complete review of historical financials, operational structure, and existing software systems.",
+      },
+      {
+        step: "02",
+        title: "Infrastructure Design",
+        body: "Development of customized financial models, reporting templates, and risk control matrices.",
+      },
+      {
+        step: "03",
+        title: "Integration & Deployment",
+        body: "Streamlining tool integrations, establishing data pipelines, and onboarding financial operations.",
+      },
+      {
+        step: "04",
+        title: "Active Management & Strategy",
+        body: "Ongoing monitoring, monthly performance reviews, and active strategic advisory sessions.",
+      },
+    ],
+    why: [
+      "We do not deliver static, advisory-only reports",
+      "We embed directly alongside your executive team as an execution-oriented financial partner",
+      "Institutional corporate finance expertise combined with modern technology stacks",
+      "Scalable financial infrastructure that operates continuously on your behalf",
+    ],
+    faq: [
+      {
+        q: "How does this service integrate with our existing accounting team or software?",
+        a: "We work on top of your current operational infrastructure. We integrate seamlessly with standard ERPs and accounting systems, acting as strategic advisers and financial architects without disrupting daily bookkeeping operations.",
+      },
+      {
+        q: "Is this service designed for early-stage companies or established enterprises?",
+        a: "Our model is designed to scale with your organization. Whether you are scaling rapidly and need fractional executive finance support, or are an established firm requiring sophisticated capital management, our engagement model adapts to your operational scale.",
+      },
+    ],
+    metaTitle: "Strategic Financial Advisory & Management | Fredacorpal™",
+    metaDescription:
+      "Capital planning, financial governance and operational oversight — executive dashboards, rolling forecasts and board-ready reporting for scaling enterprises.",
+  },
 ];
 
 export const getService = (slug: string) => services.find((s) => s.slug === slug);
@@ -608,6 +689,157 @@ export const footerColumns: { title: string; links: NavItem[] }[] = [
       { label: "Contact", to: "/contact" },
       { label: "Privacy Policy", to: "/privacy" },
       { label: "Terms", to: "/terms" },
+    ],
+  },
+];
+
+export type BenefitCategory = {
+  slug: string;
+  title: string;
+  description: string;
+  subcategories: string[];
+  details: { title: string; body: string }[];
+};
+
+export const careerBenefits: BenefitCategory[] = [
+  {
+    slug: "compensation",
+    title: "Core Compensation & Time Off",
+    description:
+      "Reward your time and expertise with competitive pay, performance rewards, and genuine time away from work.",
+    subcategories: [
+      "Competitive Base Salary",
+      "Performance Bonuses",
+      "Generous Paid Vacation",
+      "Sick & Personal Days",
+    ],
+    details: [
+      {
+        title: "Competitive Base Salary",
+        body: "Starting at $40/hr, with compensation calibrated directly to your experience and expertise.",
+      },
+      {
+        title: "Performance Bonuses",
+        body: "Earn quarterly incentives tied directly to your customer satisfaction ratings and response time metrics.",
+      },
+      {
+        title: "Generous Paid Vacation",
+        body: "Take dedicated paid time off each year to recharge, along with paid leave for all major national holidays.",
+      },
+      {
+        title: "Sick & Personal Days",
+        body: "Access annual designated paid days off whenever you need to rest, recover, or handle personal matters.",
+      },
+    ],
+  },
+  {
+    slug: "remote-flexibility",
+    title: "Remote Work & Flexibility",
+    description:
+      "Empower your workday with modern hardware, recurring stipends, and freedom over your daily schedule.",
+    subcategories: [
+      "Home Office Setup Stipend",
+      "Tech & Connectivity Allowance",
+      "Company Equipment",
+      "Flexible Scheduling",
+    ],
+    details: [
+      {
+        title: "Home Office Setup Stipend",
+        body: "Receive a one-time allowance upon joining to build a comfortable, ergonomic, and productive home workspace.",
+      },
+      {
+        title: "Tech & Connectivity Allowance",
+        body: "Enjoy a recurring monthly stipend to cover high-speed home internet and mobile phone costs.",
+      },
+      {
+        title: "Company Equipment",
+        body: "Work with top-tier hardware, including a fully loaded laptop and a premium noise-canceling headset.",
+      },
+      {
+        title: "Flexible Scheduling",
+        body: "Autonomy over your daily hours outside of our core team collaboration windows.",
+      },
+    ],
+  },
+  {
+    slug: "health-wellness",
+    title: "Health & Wellness",
+    description:
+      "Prioritize your physical and mental well-being through comprehensive insurance and dedicated wellness perks.",
+    subcategories: [
+      "Comprehensive Health Coverage",
+      "Mental Health Support",
+      "Monthly Wellness Stipend",
+    ],
+    details: [
+      {
+        title: "Comprehensive Health Coverage",
+        body: "Choose from robust medical, dental, and vision insurance plans tailored to your needs.",
+      },
+      {
+        title: "Mental Health Support",
+        body: "Take dedicated mental health rest days each year alongside access to wellness support programs.",
+      },
+      {
+        title: "Monthly Wellness Stipend",
+        body: "Utilize a dedicated allowance for gym memberships, fitness classes, wellness apps, or sporting goods.",
+      },
+    ],
+  },
+  {
+    slug: "growth",
+    title: "Growth & Development",
+    description:
+      "Invest in your career with education funding, internal advancement paths, and hands-on skill expansion.",
+    subcategories: [
+      "Annual Learning Budget",
+      "Clear Career Advancement",
+      "Mentorship & Skill Building",
+    ],
+    details: [
+      {
+        title: "Annual Learning Budget",
+        body: "Access dedicated annual funding to pursue courses, attend workshops, or purchase books for your career.",
+      },
+      {
+        title: "Clear Career Advancement",
+        body: "Grow into leadership or specialized roles as our expanding team scales its customer care processes.",
+      },
+      {
+        title: "Mentorship & Skill Building",
+        body: "Participate in structured internal guidance and cross-functional project opportunities to broaden your skill set.",
+      },
+    ],
+  },
+  {
+    slug: "retirement",
+    title: "Retirement & Financial Security",
+    description:
+      "Plan for your financial future with generous matching, expert advisory tools, and transparent vesting.",
+    subcategories: [
+      "Employer-Sponsored 401(k)",
+      "Competitive Match",
+      "Immediate Vesting",
+      "Financial Advisory Services",
+    ],
+    details: [
+      {
+        title: "Employer-Sponsored 401(k)",
+        body: "Build long-term security with a retirement plan designed to help you prepare for the future.",
+      },
+      {
+        title: "Competitive Match",
+        body: "Maximize your savings with a 100% match on your first 3% of contributions, plus 50% on the next 2%.",
+      },
+      {
+        title: "Immediate Vesting",
+        body: "Benefit from employee-first vesting schedules that let you keep matching contributions from day one.",
+      },
+      {
+        title: "Financial Advisory Services",
+        body: "Access free financial planning tools and quarterly consultations with certified financial planners.",
+      },
     ],
   },
 ];
