@@ -29,9 +29,16 @@ function Careers() {
         <ButtonLink to="/apply" size="lg">
           Apply Now
         </ButtonLink>
-        <ButtonLink to="/about" variant="light" size="lg">
-          About Fredacorpal
-        </ButtonLink>
+        <a
+          href="#perks"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById("perks")?.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
+          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-white/30 bg-white/5 px-8 py-4 text-base font-semibold tracking-tight text-white backdrop-blur-sm transition-all duration-300 hover:border-gold hover:text-gold"
+        >
+          View Benefits
+        </a>
       </PageHero>
 
       <Section>
