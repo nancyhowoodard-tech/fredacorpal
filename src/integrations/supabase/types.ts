@@ -14,6 +14,157 @@ export type Database = {
   }
   public: {
     Tables: {
+      candidate_credentials: {
+        Row: {
+          code: string
+          created_at: string
+          user_id: string
+          username: string
+        }
+        Insert: {
+          code: string
+          created_at?: string
+          user_id: string
+          username: string
+        }
+        Update: {
+          code?: string
+          created_at?: string
+          user_id?: string
+          username?: string
+        }
+        Relationships: []
+      }
+      candidate_documents: {
+        Row: {
+          candidate_id: string
+          created_at: string
+          doc_type: string
+          file_name: string
+          id: string
+          status: string
+          storage_path: string
+          updated_at: string
+        }
+        Insert: {
+          candidate_id: string
+          created_at?: string
+          doc_type: string
+          file_name: string
+          id?: string
+          status?: string
+          storage_path: string
+          updated_at?: string
+        }
+        Update: {
+          candidate_id?: string
+          created_at?: string
+          doc_type?: string
+          file_name?: string
+          id?: string
+          status?: string
+          storage_path?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "candidate_documents_candidate_id_fkey"
+            columns: ["candidate_id"]
+            isOneToOne: false
+            referencedRelation: "candidates"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      candidate_offers: {
+        Row: {
+          candidate_id: string
+          created_at: string
+          hourly_rate: number
+          id: string
+          start_date: string | null
+          status: string
+          terms: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          candidate_id: string
+          created_at?: string
+          hourly_rate?: number
+          id?: string
+          start_date?: string | null
+          status?: string
+          terms?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          candidate_id?: string
+          created_at?: string
+          hourly_rate?: number
+          id?: string
+          start_date?: string | null
+          status?: string
+          terms?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "candidate_offers_candidate_id_fkey"
+            columns: ["candidate_id"]
+            isOneToOne: false
+            referencedRelation: "candidates"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      candidates: {
+        Row: {
+          agreements_accepted_at: string | null
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          personal: Json
+          position: string
+          status: string
+          submitted_at: string | null
+          tax_form: Json
+          updated_at: string
+          username: string
+        }
+        Insert: {
+          agreements_accepted_at?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string
+          id: string
+          personal?: Json
+          position?: string
+          status?: string
+          submitted_at?: string | null
+          tax_form?: Json
+          updated_at?: string
+          username: string
+        }
+        Update: {
+          agreements_accepted_at?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          personal?: Json
+          position?: string
+          status?: string
+          submitted_at?: string | null
+          tax_form?: Json
+          updated_at?: string
+          username?: string
+        }
+        Relationships: []
+      }
       contact_inquiries: {
         Row: {
           budget: string
