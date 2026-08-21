@@ -1,8 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-
-/** Domain used to give candidate usernames a stable internal auth identity. */
-export const CANDIDATE_EMAIL_DOMAIN = "candidates.fredacorpal.app";
+import { CANDIDATE_EMAIL_DOMAIN } from "@/lib/candidate-domain";
 
 /**
  * Exchanges a candidate username + access code for a one-time sign-in token.

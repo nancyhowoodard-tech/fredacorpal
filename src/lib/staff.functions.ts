@@ -43,6 +43,9 @@ export const getDashboard = createServerFn({ method: "GET" })
     ]);
 
     const roles = (rolesRes.data ?? []).map((r) => r.role as string);
+    if (!roles.some((r) => r === "admin" || r === "staff")) {
+      throw new Error("Forbidden: this workspace is for staff accounts.");
+    }
 
     return {
       profile: profileRes.data,
