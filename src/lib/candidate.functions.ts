@@ -2,6 +2,14 @@ import { createServerFn } from "@tanstack/react-start";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { z } from "zod";
 
+export type JsonValue =
+  | string
+  | number
+  | boolean
+  | null
+  | JsonValue[]
+  | { [key: string]: JsonValue };
+
 export type CandidateRecord = {
   id: string;
   username: string;
@@ -9,8 +17,8 @@ export type CandidateRecord = {
   email: string;
   position: string;
   status: string;
-  personal: Record<string, unknown>;
-  tax_form: Record<string, unknown>;
+  personal: JsonValue;
+  tax_form: JsonValue;
   agreements_accepted_at: string | null;
   submitted_at: string | null;
 };
