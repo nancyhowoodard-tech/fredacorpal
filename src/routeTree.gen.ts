@@ -27,6 +27,8 @@ import { Route as CareersIndexRouteImport } from './routes/careers.index'
 import { Route as CareersCustomerCareRouteImport } from './routes/careers.customer-care'
 import { Route as CareersSeoExpertRouteImport } from './routes/careers.seo-expert'
 import { Route as CareersSocialMediaManagerRouteImport } from './routes/careers.social-media-manager'
+import { Route as PortalIndexRouteImport } from './routes/portal.index'
+import { Route as PortalCandidateRouteImport } from './routes/portal.candidate'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesCustomerSupportRouteImport } from './routes/services.customer-support'
 import { Route as ServicesFinancialAdvisoryRouteImport } from './routes/services.financial-advisory'
@@ -125,6 +127,16 @@ const CareersSocialMediaManagerRoute =
     path: '/careers/social-media-manager',
     getParentRoute: () => rootRouteImport,
   } as any)
+const PortalIndexRoute = PortalIndexRouteImport.update({
+  id: '/portal/',
+  path: '/portal/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortalCandidateRoute = PortalCandidateRouteImport.update({
+  id: '/portal/candidate',
+  path: '/portal/candidate',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/services/',
   path: '/services/',
@@ -180,6 +192,7 @@ export interface FileRoutesByFullPath {
   '/careers/customer-care': typeof CareersCustomerCareRoute
   '/careers/seo-expert': typeof CareersSeoExpertRoute
   '/careers/social-media-manager': typeof CareersSocialMediaManagerRoute
+  '/portal/candidate': typeof PortalCandidateRoute
   '/services/customer-support': typeof ServicesCustomerSupportRoute
   '/services/financial-advisory': typeof ServicesFinancialAdvisoryRoute
   '/services/paid-media': typeof ServicesPaidMediaRoute
@@ -187,6 +200,7 @@ export interface FileRoutesByFullPath {
   '/services/social-media': typeof ServicesSocialMediaRoute
   '/services/technical-solutions': typeof ServicesTechnicalSolutionsRoute
   '/careers/': typeof CareersIndexRoute
+  '/portal/': typeof PortalIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
@@ -206,6 +220,7 @@ export interface FileRoutesByTo {
   '/careers/customer-care': typeof CareersCustomerCareRoute
   '/careers/seo-expert': typeof CareersSeoExpertRoute
   '/careers/social-media-manager': typeof CareersSocialMediaManagerRoute
+  '/portal/candidate': typeof PortalCandidateRoute
   '/services/customer-support': typeof ServicesCustomerSupportRoute
   '/services/financial-advisory': typeof ServicesFinancialAdvisoryRoute
   '/services/paid-media': typeof ServicesPaidMediaRoute
@@ -213,6 +228,7 @@ export interface FileRoutesByTo {
   '/services/social-media': typeof ServicesSocialMediaRoute
   '/services/technical-solutions': typeof ServicesTechnicalSolutionsRoute
   '/careers': typeof CareersIndexRoute
+  '/portal': typeof PortalIndexRoute
   '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
@@ -234,6 +250,7 @@ export interface FileRoutesById {
   '/careers/customer-care': typeof CareersCustomerCareRoute
   '/careers/seo-expert': typeof CareersSeoExpertRoute
   '/careers/social-media-manager': typeof CareersSocialMediaManagerRoute
+  '/portal/candidate': typeof PortalCandidateRoute
   '/services/customer-support': typeof ServicesCustomerSupportRoute
   '/services/financial-advisory': typeof ServicesFinancialAdvisoryRoute
   '/services/paid-media': typeof ServicesPaidMediaRoute
@@ -241,6 +258,7 @@ export interface FileRoutesById {
   '/services/social-media': typeof ServicesSocialMediaRoute
   '/services/technical-solutions': typeof ServicesTechnicalSolutionsRoute
   '/careers/': typeof CareersIndexRoute
+  '/portal/': typeof PortalIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
@@ -262,6 +280,7 @@ export interface FileRouteTypes {
     | '/careers/customer-care'
     | '/careers/seo-expert'
     | '/careers/social-media-manager'
+    | '/portal/candidate'
     | '/services/customer-support'
     | '/services/financial-advisory'
     | '/services/paid-media'
@@ -269,6 +288,7 @@ export interface FileRouteTypes {
     | '/services/social-media'
     | '/services/technical-solutions'
     | '/careers/'
+    | '/portal/'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -288,6 +308,7 @@ export interface FileRouteTypes {
     | '/careers/customer-care'
     | '/careers/seo-expert'
     | '/careers/social-media-manager'
+    | '/portal/candidate'
     | '/services/customer-support'
     | '/services/financial-advisory'
     | '/services/paid-media'
@@ -295,6 +316,7 @@ export interface FileRouteTypes {
     | '/services/social-media'
     | '/services/technical-solutions'
     | '/careers'
+    | '/portal'
     | '/services'
   id:
     | '__root__'
@@ -315,6 +337,7 @@ export interface FileRouteTypes {
     | '/careers/customer-care'
     | '/careers/seo-expert'
     | '/careers/social-media-manager'
+    | '/portal/candidate'
     | '/services/customer-support'
     | '/services/financial-advisory'
     | '/services/paid-media'
@@ -322,6 +345,7 @@ export interface FileRouteTypes {
     | '/services/social-media'
     | '/services/technical-solutions'
     | '/careers/'
+    | '/portal/'
     | '/services/'
   fileRoutesById: FileRoutesById
 }
@@ -341,6 +365,7 @@ export interface RootRouteChildren {
   CareersCustomerCareRoute: typeof CareersCustomerCareRoute
   CareersSeoExpertRoute: typeof CareersSeoExpertRoute
   CareersSocialMediaManagerRoute: typeof CareersSocialMediaManagerRoute
+  PortalCandidateRoute: typeof PortalCandidateRoute
   ServicesCustomerSupportRoute: typeof ServicesCustomerSupportRoute
   ServicesFinancialAdvisoryRoute: typeof ServicesFinancialAdvisoryRoute
   ServicesPaidMediaRoute: typeof ServicesPaidMediaRoute
@@ -348,6 +373,7 @@ export interface RootRouteChildren {
   ServicesSocialMediaRoute: typeof ServicesSocialMediaRoute
   ServicesTechnicalSolutionsRoute: typeof ServicesTechnicalSolutionsRoute
   CareersIndexRoute: typeof CareersIndexRoute
+  PortalIndexRoute: typeof PortalIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
@@ -479,6 +505,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CareersSocialMediaManagerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/portal/': {
+      id: '/portal/'
+      path: '/portal'
+      fullPath: '/portal/'
+      preLoaderRoute: typeof PortalIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portal/candidate': {
+      id: '/portal/candidate'
+      path: '/portal/candidate'
+      fullPath: '/portal/candidate'
+      preLoaderRoute: typeof PortalCandidateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/': {
       id: '/services/'
       path: '/services'
@@ -560,6 +600,7 @@ const rootRouteChildren: RootRouteChildren = {
   CareersCustomerCareRoute: CareersCustomerCareRoute,
   CareersSeoExpertRoute: CareersSeoExpertRoute,
   CareersSocialMediaManagerRoute: CareersSocialMediaManagerRoute,
+  PortalCandidateRoute: PortalCandidateRoute,
   ServicesCustomerSupportRoute: ServicesCustomerSupportRoute,
   ServicesFinancialAdvisoryRoute: ServicesFinancialAdvisoryRoute,
   ServicesPaidMediaRoute: ServicesPaidMediaRoute,
@@ -567,6 +608,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesSocialMediaRoute: ServicesSocialMediaRoute,
   ServicesTechnicalSolutionsRoute: ServicesTechnicalSolutionsRoute,
   CareersIndexRoute: CareersIndexRoute,
+  PortalIndexRoute: PortalIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
