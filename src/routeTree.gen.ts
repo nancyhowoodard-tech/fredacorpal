@@ -20,6 +20,8 @@ import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as StaffPortalRouteImport } from './routes/staff-portal'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as AuthenticatedCandidateRouteImport } from './routes/_authenticated/candidate'
+import { Route as AuthenticatedCandidatesRouteImport } from './routes/_authenticated/candidates'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedTeamRouteImport } from './routes/_authenticated/team'
 import { Route as ApiSupportChatRouteImport } from './routes/api/support-chat'
@@ -90,6 +92,16 @@ const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedCandidateRoute = AuthenticatedCandidateRouteImport.update({
+  id: '/candidate',
+  path: '/candidate',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedCandidatesRoute = AuthenticatedCandidatesRouteImport.update({
+  id: '/candidates',
+  path: '/candidates',
+  getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
   id: '/dashboard',
@@ -186,6 +198,8 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/staff-portal': typeof StaffPortalRoute
   '/terms': typeof TermsRoute
+  '/candidate': typeof AuthenticatedCandidateRoute
+  '/candidates': typeof AuthenticatedCandidatesRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/team': typeof AuthenticatedTeamRoute
   '/api/support-chat': typeof ApiSupportChatRoute
@@ -214,6 +228,8 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/staff-portal': typeof StaffPortalRoute
   '/terms': typeof TermsRoute
+  '/candidate': typeof AuthenticatedCandidateRoute
+  '/candidates': typeof AuthenticatedCandidatesRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/team': typeof AuthenticatedTeamRoute
   '/api/support-chat': typeof ApiSupportChatRoute
@@ -244,6 +260,8 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/staff-portal': typeof StaffPortalRoute
   '/terms': typeof TermsRoute
+  '/_authenticated/candidate': typeof AuthenticatedCandidateRoute
+  '/_authenticated/candidates': typeof AuthenticatedCandidatesRoute
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/team': typeof AuthenticatedTeamRoute
   '/api/support-chat': typeof ApiSupportChatRoute
@@ -274,6 +292,8 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/staff-portal'
     | '/terms'
+    | '/candidate'
+    | '/candidates'
     | '/dashboard'
     | '/team'
     | '/api/support-chat'
@@ -302,6 +322,8 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/staff-portal'
     | '/terms'
+    | '/candidate'
+    | '/candidates'
     | '/dashboard'
     | '/team'
     | '/api/support-chat'
@@ -331,6 +353,8 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/staff-portal'
     | '/terms'
+    | '/_authenticated/candidate'
+    | '/_authenticated/candidates'
     | '/_authenticated/dashboard'
     | '/_authenticated/team'
     | '/api/support-chat'
@@ -456,6 +480,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/candidate': {
+      id: '/_authenticated/candidate'
+      path: '/candidate'
+      fullPath: '/candidate'
+      preLoaderRoute: typeof AuthenticatedCandidateRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/candidates': {
+      id: '/_authenticated/candidates'
+      path: '/candidates'
+      fullPath: '/candidates'
+      preLoaderRoute: typeof AuthenticatedCandidatesRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/dashboard': {
       id: '/_authenticated/dashboard'
       path: '/dashboard'
@@ -572,11 +610,15 @@ declare module '@tanstack/react-router' {
 }
 
 interface AuthenticatedRouteRouteChildren {
+  AuthenticatedCandidateRoute: typeof AuthenticatedCandidateRoute
+  AuthenticatedCandidatesRoute: typeof AuthenticatedCandidatesRoute
   AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
   AuthenticatedTeamRoute: typeof AuthenticatedTeamRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedCandidateRoute: AuthenticatedCandidateRoute,
+  AuthenticatedCandidatesRoute: AuthenticatedCandidatesRoute,
   AuthenticatedDashboardRoute: AuthenticatedDashboardRoute,
   AuthenticatedTeamRoute: AuthenticatedTeamRoute,
 }
