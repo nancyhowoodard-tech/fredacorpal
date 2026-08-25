@@ -287,21 +287,21 @@ function AdminCandidates() {
                           </div>
                           <div className="flex justify-between gap-4">
                             <dt className="text-muted-foreground">Phone</dt>
-                            <dd>{personal.phone || "—"}</dd>
+                            <dd>{personal["phone"] || "—"}</dd>
                           </div>
                           <div className="flex justify-between gap-4">
                             <dt className="text-muted-foreground">Address</dt>
-                            <dd className="truncate">{personal.address || "—"}</dd>
+                            <dd className="truncate">{personal["address"] || "—"}</dd>
                           </div>
                           <div className="flex justify-between gap-4">
                             <dt className="text-muted-foreground">Availability</dt>
-                            <dd>{personal.start_availability || "—"}</dd>
+                            <dd>{personal["start_availability"] || "—"}</dd>
                           </div>
                           <div className="flex justify-between gap-4">
                             <dt className="text-muted-foreground">Tax form</dt>
                             <dd>
                               {Object.keys(tax).length > 0
-                                ? `${tax.filing_status} · ••••${tax.tax_id_last4}`
+                                ? `${tax["filing_status"]} · ••••${tax["tax_id_last4"]}`
                                 : "Not completed"}
                             </dd>
                           </div>

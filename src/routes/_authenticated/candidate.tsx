@@ -237,7 +237,7 @@ function CandidateDashboard() {
         </div>
 
         <div className="mt-8 flex flex-wrap gap-2">
-          <StepBadge done={Boolean(personal.phone)} label="Personal details" />
+          <StepBadge done={Boolean(personal["phone"])} label="Personal details" />
           <StepBadge done={data.documents.length > 0} label="Documents uploaded" />
           <StepBadge done={Boolean(data.offer)} label="Offer received" />
           <StepBadge done={taxDone} label="Tax form" />
@@ -275,7 +275,7 @@ function CandidateDashboard() {
                 <input
                   id="phone"
                   name="phone"
-                  defaultValue={personal.phone ?? ""}
+                  defaultValue={personal["phone"] ?? ""}
                   className={fieldClass}
                 />
               </div>
@@ -286,7 +286,7 @@ function CandidateDashboard() {
                 <input
                   id="address"
                   name="address"
-                  defaultValue={personal.address ?? ""}
+                  defaultValue={personal["address"] ?? ""}
                   className={fieldClass}
                 />
               </div>
@@ -297,7 +297,7 @@ function CandidateDashboard() {
                 <input
                   id="start_availability"
                   name="start_availability"
-                  defaultValue={personal.start_availability ?? ""}
+                  defaultValue={personal["start_availability"] ?? ""}
                   className={fieldClass}
                   placeholder="e.g. 2 weeks from offer"
                 />
@@ -420,7 +420,7 @@ function CandidateDashboard() {
                   id="filing_status"
                   name="filing_status"
                   className={fieldClass}
-                  defaultValue={String(tax.filing_status ?? "single")}
+                  defaultValue={String(tax["filing_status"] ?? "single")}
                 >
                   <option value="single">Single</option>
                   <option value="married">Married</option>
@@ -437,7 +437,7 @@ function CandidateDashboard() {
                   required
                   inputMode="numeric"
                   maxLength={4}
-                  defaultValue={String(tax.tax_id_last4 ?? "")}
+                  defaultValue={String(tax["tax_id_last4"] ?? "")}
                   className={fieldClass}
                   placeholder="1234"
                 />
@@ -453,7 +453,7 @@ function CandidateDashboard() {
                   min="0"
                   max="20"
                   required
-                  defaultValue={String(tax.allowances ?? 0)}
+                  defaultValue={String(tax["allowances"] ?? 0)}
                   className={fieldClass}
                 />
               </div>
@@ -465,7 +465,7 @@ function CandidateDashboard() {
                   id="signature"
                   name="signature"
                   required
-                  defaultValue={String(tax.signature ?? "")}
+                  defaultValue={String(tax["signature"] ?? "")}
                   className={fieldClass}
                 />
               </div>
