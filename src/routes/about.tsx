@@ -16,19 +16,46 @@ export const Route = createFileRoute("/about")({
 });
 
 const pillars = [
-  { title: "Digital Infrastructure", body: "The technical substrate behind visibility, measurement and delivery." },
-  { title: "Performance Marketing", body: "Search, social and paid acquisition operated as one accountable system." },
-  { title: "Technical Expertise", body: "Senior engineering judgement applied to growth-critical systems." },
-  { title: "Remote Talent", body: "A vetted global network deployed inside managed operating frameworks." },
-  { title: "Enterprise Growth", body: "Programs designed for governance, scale and multi-market complexity." },
-  { title: "Automation", body: "Repeatable frameworks that reduce manual load and key-person risk." },
+  {
+    title: "Digital Infrastructure",
+    body: "The technical substrate behind visibility, measurement and delivery.",
+  },
+  {
+    title: "Performance Marketing",
+    body: "Search, social and paid acquisition operated as one accountable system.",
+  },
+  {
+    title: "Technical Expertise",
+    body: "Senior engineering judgement applied to growth-critical systems.",
+  },
+  {
+    title: "Remote Talent",
+    body: "A vetted global network deployed inside managed operating frameworks.",
+  },
+  {
+    title: "Enterprise Growth",
+    body: "Programs designed for governance, scale and multi-market complexity.",
+  },
+  {
+    title: "Automation",
+    body: "Repeatable frameworks that reduce manual load and key-person risk.",
+  },
 ];
 
 const values = [
-  { title: "Operational Reliability", body: "Documented process over improvisation, on every engagement." },
+  {
+    title: "Operational Reliability",
+    body: "Documented process over improvisation, on every engagement.",
+  },
   { title: "Verified Outcomes", body: "Measurement corrected before spend or effort is scaled." },
-  { title: "Exclusivity of Talent", body: "Specialists selected through structured technical assessment." },
-  { title: "Security Discipline", body: "Least-privilege access, confidentiality and controlled change." },
+  {
+    title: "Exclusivity of Talent",
+    body: "Specialists selected through structured technical assessment.",
+  },
+  {
+    title: "Security Discipline",
+    body: "Least-privilege access, confidentiality and controlled change.",
+  },
 ];
 
 function About() {
@@ -41,7 +68,7 @@ function About() {
         breadcrumbs={[{ label: "About" }]}
       >
         <ButtonLink to="/contact" size="lg">
-          Work With Us
+          Hire Us
         </ButtonLink>
         <ButtonLink to="/services" variant="light" size="lg">
           See Services
@@ -73,8 +100,7 @@ function About() {
               <Eyebrow>Mission</Eyebrow>
               <p className="mt-5 text-lg leading-relaxed">
                 Connect elite remote technical talent networks with enterprise digital
-                infrastructures to drive operational acceleration and verified search
-                equity.
+                infrastructures to drive operational acceleration and verified search equity.
               </p>
             </div>
           </Reveal>
@@ -82,8 +108,8 @@ function About() {
             <div className="h-full rounded-lg border border-border bg-card p-8">
               <Eyebrow>Vision</Eyebrow>
               <p className="mt-5 text-lg leading-relaxed">
-                Establish Fredacorpal as a global standard for integrated service
-                delivery through automated frameworks and specialized human talent.
+                Establish Fredacorpal as a global standard for integrated service delivery through
+                automated frameworks and specialized human talent.
               </p>
             </div>
           </Reveal>
@@ -106,8 +132,8 @@ function About() {
 
       <CTASection
         title="Build with an integrated partner"
-        primary={{ label: "Work With Us", to: "/contact" }}
-        secondary={{ label: "Join Our Team", to: "/careers" }}
+        primary={{ label: "Hire Us", to: "/contact" }}
+        secondary={{ label: "Apply Now", to: "/apply" }}
       />
     </>
   );

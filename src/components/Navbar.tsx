@@ -1,8 +1,9 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { ExternalLink, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { navItems } from "@/data/site";
+import { PORTAL_URL } from "@/lib/constants";
 import { ButtonLink } from "./Button";
 import { Logo } from "./Primitives";
 import { ThemeToggle } from "./ThemeToggle";
@@ -55,11 +56,11 @@ export function Navbar() {
 
         <div className="hidden items-center gap-2 lg:flex">
           <ThemeToggle />
-          <ButtonLink to="/careers" variant="outline" size="sm">
-            Join Our Team
+          <ButtonLink to="/apply" variant="outline" size="sm">
+            Apply Now
           </ButtonLink>
           <ButtonLink to="/contact" size="sm">
-            Work With Us
+            Hire Us
           </ButtonLink>
         </div>
 
@@ -96,14 +97,20 @@ export function Navbar() {
           ))}
           <div className="mt-3 grid gap-2">
             <ButtonLink to="/contact" size="lg">
-              Work With Us
+              Hire Us
             </ButtonLink>
-            <ButtonLink to="/careers" variant="outline" size="lg">
-              Join Our Team
+            <ButtonLink to="/apply" variant="outline" size="lg">
+              Apply Now
             </ButtonLink>
-            <ButtonLink to="/staff-portal" variant="ghost" size="sm">
-              Staff Portal
-            </ButtonLink>
+            <a
+              href={PORTAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-md px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:text-gold"
+            >
+              <span>Staff Portal</span>
+              <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
           </div>
         </nav>
       </div>

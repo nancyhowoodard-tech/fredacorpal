@@ -1,29 +1,41 @@
 import { Link } from "@tanstack/react-router";
-import logoAsset from "@/assets/fredacorpal-logo.png.asset.json";
 import { cn } from "@/lib/utils";
 import { ButtonLink } from "./Button";
 import { Reveal } from "./Motion";
 
-export function Logo({ light = false }: { light?: boolean }) {
+export function Logo({
+  light = false,
+  size = "md",
+}: {
+  light?: boolean;
+  size?: "sm" | "md" | "lg";
+}) {
+  const sizeClasses = {
+    sm: "h-8 w-8",
+    md: "h-10 w-10",
+    lg: "h-12 w-12",
+  }[size];
+
   return (
-    <span className="flex items-center gap-2">
+    <span className="flex items-center gap-2.5">
       <img
-        src={logoAsset.url}
-        alt="Fredacorpal Integrated Services logo"
-        className="h-9 w-9 shrink-0 rounded-full object-contain"
-        width={36}
-        height={36}
+        src="/fredlogo.svg"
+        alt="Fredacorpal Integrated Services emblem"
+        className={cn(sizeClasses, "shrink-0 rounded-full object-contain shadow-sm")}
+        width={size === "lg" ? 48 : size === "sm" ? 32 : 40}
+        height={size === "lg" ? 48 : size === "sm" ? 32 : 40}
+        loading="eager"
       />
       <span className="min-w-0">
         <span
           className={cn(
-            "block font-display text-[0.95rem] leading-tight font-bold tracking-tight",
+            "block font-display text-[0.98rem] leading-tight font-bold tracking-tight",
             light ? "text-white" : "text-foreground",
           )}
         >
           Fredacorpal<span className="text-gold">™</span>
         </span>
-        <span className="block text-[0.6rem] tracking-[0.22em] text-muted-foreground uppercase">
+        <span className="block text-[0.6rem] tracking-[0.24em] text-muted-foreground uppercase font-semibold">
           Integrated Services
         </span>
       </span>
@@ -54,12 +66,7 @@ export function SectionHeader({
   invert?: boolean;
 }) {
   return (
-    <div
-      className={cn(
-        "max-w-3xl",
-        align === "center" && "mx-auto text-center",
-      )}
-    >
+    <div className={cn("max-w-3xl", align === "center" && "mx-auto text-center")}>
       {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
       <h2
         className={cn(
@@ -109,11 +116,7 @@ export function Section({
   );
 }
 
-export function Breadcrumbs({
-  items,
-}: {
-  items: { label: string; to?: string }[];
-}) {
+export function Breadcrumbs({ items }: { items: { label: string; to?: string }[] }) {
   return (
     <nav aria-label="Breadcrumb" className="text-xs text-muted-foreground">
       <ol className="flex flex-wrap items-center gap-2">
@@ -187,7 +190,7 @@ export function PageHero({
 export function CTASection({
   title = "Ready to build enterprise-grade infrastructure?",
   description = "Speak with a Fredacorpal strategist about the systems behind your next phase of growth.",
-  primary = { label: "Work With Us", to: "/contact" },
+  primary = { label: "Hire Us", to: "/contact" },
   secondary = { label: "View Pricing", to: "/pricing" },
 }: {
   title?: string;
@@ -198,10 +201,7 @@ export function CTASection({
   return (
     <section className="relative overflow-hidden bg-navy py-20 text-white lg:py-24">
       <div className="node-grid absolute inset-0 opacity-30" aria-hidden="true" />
-      <div
-        className="absolute inset-x-0 top-0 h-px gold-rule"
-        aria-hidden="true"
-      />
+      <div className="absolute inset-x-0 top-0 h-px gold-rule" aria-hidden="true" />
       <div className="container-x relative">
         <Reveal className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-balance sm:text-4xl">{title}</h2>
@@ -234,9 +234,7 @@ export function FAQ({ items }: { items: { q: string; a: string }[] }) {
               +
             </span>
           </summary>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-            {item.a}
-          </p>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">{item.a}</p>
         </details>
       ))}
     </div>

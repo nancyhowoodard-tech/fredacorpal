@@ -292,25 +292,25 @@ Every major destination must have its own page.
 Required routes:
 
 /
- /about
- /services
- /services/seo
- /services/social-media
- /services/paid-media
- /services/customer-support
- /services/technical-solutions
- /industries
- /partnerships
- /careers
- /careers/customer-care
- /careers/social-media-manager
- /careers/seo-expert
- /contact
- /pricing
- /staff-portal
- /privacy
- /terms
- /404
+/about
+/services
+/services/seo
+/services/social-media
+/services/paid-media
+/services/customer-support
+/services/technical-solutions
+/industries
+/partnerships
+/careers
+/careers/customer-care
+/careers/social-media-manager
+/careers/seo-expert
+/contact
+/pricing
+/staff-portal
+/privacy
+/terms
+/404
 
 Buttons must navigate to their appropriate destinations.
 
@@ -1113,47 +1113,47 @@ Suggested structure:
 
 src/
 ├── components/
-│   ├── Navbar
-│   ├── Footer
-│   ├── Hero
-│   ├── Button
-│   ├── ServiceCard
-│   ├── TestimonialCard
-│   ├── JobCard
-│   ├── CTASection
-│   ├── SectionHeader
-│   └── ThemeToggle
+│ ├── Navbar
+│ ├── Footer
+│ ├── Hero
+│ ├── Button
+│ ├── ServiceCard
+│ ├── TestimonialCard
+│ ├── JobCard
+│ ├── CTASection
+│ ├── SectionHeader
+│ └── ThemeToggle
 │
 ├── pages/
-│   ├── Home
-│   ├── About
-│   ├── Services
-│   ├── ServiceSEO
-│   ├── ServiceSocial
-│   ├── ServicePaidMedia
-│   ├── ServiceSupport
-│   ├── ServiceTechnical
-│   ├── Industries
-│   ├── Partnerships
-│   ├── Careers
-│   ├── CareerCustomerCare
-│   ├── CareerSocialMedia
-│   ├── CareerSEO
-│   ├── Pricing
-│   ├── Contact
-│   ├── StaffPortal
-│   ├── Privacy
-│   ├── Terms
-│   └── NotFound
+│ ├── Home
+│ ├── About
+│ ├── Services
+│ ├── ServiceSEO
+│ ├── ServiceSocial
+│ ├── ServicePaidMedia
+│ ├── ServiceSupport
+│ ├── ServiceTechnical
+│ ├── Industries
+│ ├── Partnerships
+│ ├── Careers
+│ ├── CareerCustomerCare
+│ ├── CareerSocialMedia
+│ ├── CareerSEO
+│ ├── Pricing
+│ ├── Contact
+│ ├── StaffPortal
+│ ├── Privacy
+│ ├── Terms
+│ └── NotFound
 │
 ├── data/
-│   ├── services
-│   ├── testimonials
-│   ├── careers
-│   └── industries
+│ ├── services
+│ ├── testimonials
+│ ├── careers
+│ └── industries
 │
 ├── styles/
-│   └── globals
+│ └── globals
 │
 ├── App
 └── main

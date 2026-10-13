@@ -1,7 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { Lock } from "lucide-react";
+import { ExternalLink, Lock } from "lucide-react";
 import { footerColumns } from "@/data/site";
+import { PORTAL_URL } from "@/lib/constants";
 import { ButtonLink } from "./Button";
+import { Logo } from "./Primitives";
 
 export function Footer() {
   return (
@@ -10,17 +12,12 @@ export function Footer() {
       <div className="container-x py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_repeat(3,minmax(0,1fr))]">
           <div className="max-w-sm">
-            <span className="flex items-center gap-2">
-              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-md border border-gold/60 bg-gold/10 font-display font-bold text-gold">
-                F
-              </span>
-              <span className="font-display text-lg font-bold">
-                Fredacorpal<span className="text-gold">™</span>
-              </span>
-            </span>
+            <Link to="/" aria-label="Fredacorpal Integrated Services home">
+              <Logo light size="lg" />
+            </Link>
             <p className="mt-5 text-sm leading-relaxed text-white/60">
-              Integrated digital infrastructure, performance marketing, technical
-              services and elite remote talent for enterprises operating globally.
+              Integrated digital infrastructure, performance marketing, technical services and elite
+              remote talent for enterprises operating globally.
             </p>
             <p className="mt-5 font-display text-sm text-gold">
               Connecting Talents, Building the Future.
@@ -56,16 +53,22 @@ export function Footer() {
               </span>
               <div className="min-w-0">
                 <h2 className="font-display text-base font-bold">
-                  Fredacorpal™ Staff Portal
+                  Fredacorpal™ Staff & Onboarding Portal
                 </h2>
                 <p className="mt-1 text-sm text-white/60">
-                  Restricted access for authenticated team members.
+                  Restricted access for internal team members and onboarding candidates.
                 </p>
               </div>
             </div>
-            <ButtonLink to="/staff-portal" variant="outline" className="text-white">
-              Staff Login
-            </ButtonLink>
+            <a
+              href={PORTAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-gold/60 bg-gold/10 px-6 py-2.5 text-sm font-semibold text-white transition-all hover:bg-gold hover:text-navy"
+            >
+              <span>Access Portal</span>
+              <ExternalLink className="h-4 w-4" aria-hidden="true" />
+            </a>
           </div>
         </div>
 

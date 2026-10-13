@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import type { Career } from "@/data/site";
 import { ButtonLink } from "./Button";
 import { CTASection, FAQ, PageHero, Section, SectionHeader } from "./Primitives";
@@ -7,10 +8,14 @@ export function CareerDetail({ job }: { job: Career }) {
   return (
     <>
       <PageHero
-        eyebrow={`${job.type} · ${job.location}`}
+        eyebrow={`${job.type} · ${job.department}`}
         title={job.title}
         description={job.summary}
-        breadcrumbs={[{ label: "Careers", to: "/careers" }, { label: job.title }]}
+        breadcrumbs={[
+          { label: "Departments", to: "/departments" },
+          { label: "Careers", to: "/careers" },
+          { label: job.title },
+        ]}
       >
         <ButtonLink to="/apply" size="lg">
           Apply Now
@@ -33,7 +38,10 @@ export function CareerDetail({ job }: { job: Career }) {
               <ul className="mt-5 space-y-3">
                 {job.responsibilities.map((r) => (
                   <li key={r} className="flex gap-3 text-sm text-muted-foreground">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" aria-hidden="true" />
+                    <span
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
+                      aria-hidden="true"
+                    />
                     {r}
                   </li>
                 ))}
@@ -45,7 +53,10 @@ export function CareerDetail({ job }: { job: Career }) {
               <ul className="mt-5 space-y-3">
                 {job.skills.map((s) => (
                   <li key={s} className="flex gap-3 text-sm text-muted-foreground">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" aria-hidden="true" />
+                    <span
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
+                      aria-hidden="true"
+                    />
                     {s}
                   </li>
                 ))}
@@ -57,7 +68,10 @@ export function CareerDetail({ job }: { job: Career }) {
               <ul className="mt-5 space-y-3">
                 {job.preferred.map((p) => (
                   <li key={p} className="flex gap-3 text-sm text-muted-foreground">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" aria-hidden="true" />
+                    <span
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
+                      aria-hidden="true"
+                    />
                     {p}
                   </li>
                 ))}
@@ -91,6 +105,24 @@ export function CareerDetail({ job }: { job: Career }) {
               <h2 className="font-display text-lg font-bold">Apply for this position</h2>
               <dl className="mt-6 space-y-4 text-sm">
                 <div>
+                  <dt className="text-muted-foreground">Department</dt>
+                  <dd className="font-semibold text-gold">
+                    <Link to="/departments" className="hover:underline">
+                      {job.department}
+                    </Link>
+                  </dd>
+                </div>
+                {job.service && job.serviceSlug && (
+                  <div>
+                    <dt className="text-muted-foreground">Associated Service</dt>
+                    <dd className="font-semibold">
+                      <Link to={`/services/${job.serviceSlug}`} className="hover:underline">
+                        {job.service}
+                      </Link>
+                    </dd>
+                  </div>
+                )}
+                <div>
                   <dt className="text-muted-foreground">Employment type</dt>
                   <dd className="font-semibold">{job.type}</dd>
                 </div>
@@ -104,8 +136,8 @@ export function CareerDetail({ job }: { job: Career }) {
                 </div>
               </dl>
               <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-                Applications are submitted through our secure inquiry form. Select the
-                relevant service area and reference this role in your message.
+                Applications are submitted through our secure inquiry form. Select the relevant
+                service area and reference this role in your message.
               </p>
               <div className="mt-6 grid gap-2">
                 <ButtonLink to="/apply" size="lg">
@@ -124,7 +156,7 @@ export function CareerDetail({ job }: { job: Career }) {
         title="Elite talent. Remote opportunity. Global impact."
         description="Explore every open position across the Fredacorpal delivery network."
         primary={{ label: "Apply Now", to: "/apply" }}
-        secondary={{ label: "Join Our Team", to: "/careers" }}
+        secondary={{ label: "Hire Us", to: "/contact" }}
       />
     </>
   );

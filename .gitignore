@@ -20,6 +20,12 @@ dist-ssr
 .wrangler/
 .dev.vars
 
+# Deployment staging
+deploy-cpanel/
+*.zip
+.env.deploy
+.env*.local
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

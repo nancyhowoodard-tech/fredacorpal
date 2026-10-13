@@ -140,12 +140,7 @@
 }
 
 @utility gold-rule {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--color-gold),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
 }
 
 @utility text-gradient-gold {
@@ -161,10 +156,7 @@
 
 @utility node-grid {
   background-image:
-    linear-gradient(
-      color-mix(in oklab, var(--color-gold) 12%, transparent) 1px,
-      transparent 1px
-    ),
+    linear-gradient(color-mix(in oklab, var(--color-gold) 12%, transparent) 1px, transparent 1px),
     linear-gradient(
       90deg,
       color-mix(in oklab, var(--color-gold) 12%, transparent) 1px,

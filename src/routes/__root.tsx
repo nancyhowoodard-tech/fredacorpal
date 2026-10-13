@@ -26,8 +26,7 @@ function NotFoundComponent() {
           404 — Infrastructure Not Found
         </h1>
         <p className="mt-5 text-white/70">
-          The requested destination could not be located within the Fredacorpal
-          network.
+          The requested destination could not be located within the Fredacorpal network.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3">
           <ButtonLink to="/" size="lg">
@@ -52,9 +51,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-[70vh] items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-display text-xl font-semibold tracking-tight">
-          This page didn't load
-        </h1>
+        <h1 className="font-display text-xl font-semibold tracking-tight">This page didn't load</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Something went wrong on our end. You can try refreshing or head back home.
         </p>
@@ -100,7 +97,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap",
       },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
     ],
     scripts: [{ children: themeScript }],
   }),

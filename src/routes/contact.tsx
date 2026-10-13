@@ -117,7 +117,12 @@ function Contact() {
                 <label htmlFor="company" className="text-sm font-semibold">
                   Company
                 </label>
-                <input id="company" name="company" className={fieldClass} placeholder="Acme Group" />
+                <input
+                  id="company"
+                  name="company"
+                  className={fieldClass}
+                  placeholder="Acme Group"
+                />
                 {errors["company"] ? (
                   <p className="mt-2 text-xs text-destructive">{errors["company"]}</p>
                 ) : null}
@@ -126,7 +131,13 @@ function Contact() {
                 <label htmlFor="email" className="text-sm font-semibold">
                   Email
                 </label>
-                <input id="email" name="email" type="email" className={fieldClass} placeholder="you@company.com" />
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  className={fieldClass}
+                  placeholder="you@company.com"
+                />
                 {errors["email"] ? (
                   <p className="mt-2 text-xs text-destructive">{errors["email"]}</p>
                 ) : null}
@@ -135,7 +146,13 @@ function Contact() {
                 <label htmlFor="phone" className="text-sm font-semibold">
                   Phone <span className="text-muted-foreground">(optional)</span>
                 </label>
-                <input id="phone" name="phone" type="tel" className={fieldClass} placeholder="+1 555 000 1234" />
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  className={fieldClass}
+                  placeholder="+1 555 000 1234"
+                />
               </div>
               <div>
                 <label htmlFor="service" className="text-sm font-semibold">

@@ -44,9 +44,7 @@ function Industries() {
             <Reveal key={ind.name} delay={i * 60}>
               <article className="h-full rounded-lg border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-elevate">
                 <h3 className="font-display text-lg font-bold">{ind.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {ind.body}
-                </p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{ind.body}</p>
               </article>
             </Reveal>
           ))}

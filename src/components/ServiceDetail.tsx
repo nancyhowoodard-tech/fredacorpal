@@ -7,10 +7,11 @@ export function ServiceDetail({ service }: { service: Service }) {
   return (
     <>
       <PageHero
-        eyebrow={`Service ${service.index}`}
+        eyebrow={`Service ${service.index} · ${service.department}`}
         title={service.headline}
         description={service.short}
         breadcrumbs={[
+          { label: "Departments", to: "/departments" },
           { label: "Services", to: "/services" },
           { label: service.title },
         ]}
@@ -61,7 +62,10 @@ export function ServiceDetail({ service }: { service: Service }) {
             <ul className="mt-8 space-y-4">
               {service.deliverables.map((d) => (
                 <li key={d} className="flex gap-3 text-sm text-muted-foreground">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" aria-hidden="true" />
+                  <span
+                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
+                    aria-hidden="true"
+                  />
                   {d}
                 </li>
               ))}
@@ -72,7 +76,10 @@ export function ServiceDetail({ service }: { service: Service }) {
             <ul className="mt-8 space-y-4">
               {service.benefits.map((b) => (
                 <li key={b} className="flex gap-3 text-sm text-muted-foreground">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" aria-hidden="true" />
+                  <span
+                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
+                    aria-hidden="true"
+                  />
                   {b}
                 </li>
               ))}
@@ -103,7 +110,10 @@ export function ServiceDetail({ service }: { service: Service }) {
             <ul className="mt-8 space-y-4">
               {service.why.map((w) => (
                 <li key={w} className="flex gap-3 text-sm text-muted-foreground">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" aria-hidden="true" />
+                  <span
+                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
+                    aria-hidden="true"
+                  />
                   {w}
                 </li>
               ))}

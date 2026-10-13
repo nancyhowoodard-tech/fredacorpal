@@ -75,7 +75,10 @@ function Partnerships() {
               <ul className="mt-5 space-y-3">
                 {audiences.map((a) => (
                   <li key={a} className="flex gap-3 text-sm text-muted-foreground">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" aria-hidden="true" />
+                    <span
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
+                      aria-hidden="true"
+                    />
                     {a}
                   </li>
                 ))}

@@ -5,13 +5,16 @@ import type { Career, Service, Testimonial } from "@/data/site";
 export function ServiceCard({ service }: { service: Service }) {
   return (
     <article className="group relative flex h-full flex-col rounded-lg border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-elevate">
-      <span className="font-display text-sm font-bold tracking-[0.2em] text-gold">
-        {service.index}
-      </span>
+      <div className="flex items-center justify-between gap-2">
+        <span className="font-display text-sm font-bold tracking-[0.2em] text-gold">
+          {service.index}
+        </span>
+        <span className="text-[0.65rem] font-semibold tracking-wider text-muted-foreground uppercase">
+          {service.department}
+        </span>
+      </div>
       <h3 className="mt-4 font-display text-xl font-bold">{service.title}</h3>
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-        {service.short}
-      </p>
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{service.short}</p>
       <Link
         to={service.to}
         className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold transition-colors hover:text-gold-hover"
@@ -41,18 +44,13 @@ export function TestimonialCard({ item }: { item: Testimonial }) {
         </div>
       </div>
 
-      <div
-        className="mt-5 flex items-center gap-1"
-        aria-label={`Rated ${item.rating} out of 5`}
-      >
+      <div className="mt-5 flex items-center gap-1" aria-label={`Rated ${item.rating} out of 5`}>
         {Array.from({ length: item.rating }).map((_, i) => (
           <Star key={i} className="h-4 w-4 fill-gold text-gold" aria-hidden="true" />
         ))}
       </div>
 
-      <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
-        “{item.quote}”
-      </p>
+      <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">“{item.quote}”</p>
 
       {item.metric ? (
         <p className="mt-5 rounded-md border border-gold/30 bg-gold/5 px-4 py-3 text-sm font-semibold text-accent-foreground">
@@ -70,7 +68,7 @@ export function TestimonialCard({ item }: { item: Testimonial }) {
 export function JobCard({ job }: { job: Career }) {
   return (
     <article className="group flex h-full flex-col rounded-lg border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-elevate">
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap items-center gap-2">
         <span className="rounded-full border border-gold/40 px-3 py-1 text-[0.7rem] font-semibold tracking-wide text-gold uppercase">
           {job.type}
         </span>
@@ -78,7 +76,10 @@ export function JobCard({ job }: { job: Career }) {
           {job.location}
         </span>
       </div>
-      <h3 className="mt-5 font-display text-xl font-bold">{job.title}</h3>
+      <p className="mt-3 text-[0.7rem] font-semibold tracking-wider text-muted-foreground uppercase">
+        {job.department}
+      </p>
+      <h3 className="mt-2 font-display text-xl font-bold">{job.title}</h3>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{job.summary}</p>
       <ul className="mt-5 flex-1 space-y-2 text-sm text-muted-foreground">
         {job.responsibilities.map((r) => (
@@ -92,7 +93,7 @@ export function JobCard({ job }: { job: Career }) {
         to={job.to}
         className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold transition-colors hover:text-gold-hover"
       >
-        View Position
+        {job.to === "/apply" ? "Apply Now" : "View Position"}
         <ArrowRight
           className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
           aria-hidden="true"
@@ -102,13 +103,7 @@ export function JobCard({ job }: { job: Career }) {
   );
 }
 
-export function PartnerCard({
-  title,
-  body,
-}: {
-  title: string;
-  body: string;
-}) {
+export function PartnerCard({ title, body }: { title: string; body: string }) {
   return (
     <article className="rounded-lg border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-elevate">
       <h3 className="font-display text-lg font-bold">{title}</h3>

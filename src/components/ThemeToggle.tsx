@@ -15,8 +15,7 @@ export function ThemeToggle({ className }: { className?: string }) {
   useEffect(() => {
     const stored = localStorage.getItem("fcp-theme") as Theme | null;
     const preferred: Theme =
-      stored ??
-      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      stored ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
     setTheme(preferred);
     applyTheme(preferred);
   }, []);

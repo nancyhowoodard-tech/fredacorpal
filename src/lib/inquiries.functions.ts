@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import { CONTACT_EMAIL } from "@/lib/constants";
+import { CONTACT_EMAIL, INTERNAL_NOTIFICATION_EMAIL } from "@/lib/constants";
 
 const inquirySchema = z.object({
   name: z.string().trim().min(2).max(100),
@@ -15,21 +15,22 @@ const inquirySchema = z.object({
 export const submitInquiry = createServerFn({ method: "POST" })
   .inputValidator((input: unknown) => inquirySchema.parse(input))
   .handler(async ({ data }) => {
-    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-
-    const { error } = await supabaseAdmin.from("contact_inquiries").insert({
-      name: data.name,
-      company: data.company,
-      email: data.email,
-      phone: data.phone || null,
-      service: data.service,
-      budget: data.budget,
-      message: data.message,
-    });
-
-    if (error) {
-      console.error("Failed to store inquiry", error);
-      throw new Error("We could not record your inquiry. Please try again.");
+    try {
+      const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+      const { error } = await supabaseAdmin.from("contact_inquiries").insert({
+        name: data.name,
+        company: data.company,
+        email: data.email,
+        phone: data.phone || null,
+        service: data.service,
+        budget: data.budget,
+        message: data.message,
+      });
+      if (error) {
+        console.warn("Failed to store inquiry in database:", error);
+      }
+    } catch (dbError) {
+      console.warn("Supabase database insert skipped (optional in production):", dbError);
     }
 
     const resendKey = process.env["RESEND_API_KEY"];
@@ -42,8 +43,8 @@ export const submitInquiry = createServerFn({ method: "POST" })
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            from: process.env["INQUIRY_FROM_EMAIL"] ?? "Fredacorpal <onboarding@resend.dev>",
-            to: [CONTACT_EMAIL],
+            from: process.env["INQUIRY_FROM_EMAIL"] ?? "Fredacorpal <admin@fredacorpal.world>",
+            to: [process.env["INTERNAL_NOTIFICATION_EMAIL"] || INTERNAL_NOTIFICATION_EMAIL],
             reply_to: data.email,
             subject: `New inquiry — ${data.service} — ${data.company}`,
             text: [

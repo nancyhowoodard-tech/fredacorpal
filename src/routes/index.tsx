@@ -4,20 +4,14 @@ import heroImage from "@/assets/hero-infrastructure.jpg";
 import { ButtonLink } from "@/components/Button";
 import { ServiceCard, TestimonialCard } from "@/components/Cards";
 import { Counter, Reveal } from "@/components/Motion";
-import {
-  CTASection,
-  Eyebrow,
-  Section,
-  SectionHeader,
-} from "@/components/Primitives";
+import { CTASection, Eyebrow, Section, SectionHeader } from "@/components/Primitives";
 import { services, stats, testimonials } from "@/data/site";
 import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   head: () =>
     seoHead({
-      title:
-        "Fredacorpal™ Integrated Services | Connecting Talents, Building the Future",
+      title: "Fredacorpal™ Integrated Services | Connecting Talents, Building the Future",
       description:
         "Enterprise digital infrastructure, integrated performance marketing, technical services and elite remote talent — engineered to scale organizations globally.",
       path: "/",
@@ -51,17 +45,17 @@ function Home() {
               Connecting Talents, Building the Future.
             </p>
             <p className="mt-6 max-w-2xl leading-relaxed text-white/70 lg:text-lg">
-              We integrate elite multi-channel performance marketing infrastructures to
-              scale enterprises globally. From technical engine validation to complete
-              organic platform architecture management, we construct the underlying
-              pipelines that secure brand dominance.
+              We integrate elite multi-channel performance marketing infrastructures to scale
+              enterprises globally. From technical engine validation to complete organic platform
+              architecture management, we construct the underlying pipelines that secure brand
+              dominance.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <ButtonLink to="/contact" size="lg">
-                Work With Us
+                Hire Us
               </ButtonLink>
-              <ButtonLink to="/careers" variant="light" size="lg">
-                Join Our Team
+              <ButtonLink to="/apply" variant="light" size="lg">
+                Apply Now
               </ButtonLink>
               <Link
                 to="/services"
@@ -132,8 +126,7 @@ function Home() {
                 <Eyebrow>Mission</Eyebrow>
                 <p className="mt-4 leading-relaxed text-muted-foreground">
                   Connect elite remote technical talent networks with enterprise digital
-                  infrastructures to drive operational acceleration and verified search
-                  equity.
+                  infrastructures to drive operational acceleration and verified search equity.
                 </p>
               </div>
             </Reveal>
@@ -141,8 +134,8 @@ function Home() {
               <div className="rounded-lg border border-border bg-card p-7">
                 <Eyebrow>Vision</Eyebrow>
                 <p className="mt-4 leading-relaxed text-muted-foreground">
-                  Establish Fredacorpal as a global standard for integrated service
-                  delivery through automated frameworks and specialized human talent.
+                  Establish Fredacorpal as a global standard for integrated service delivery through
+                  automated frameworks and specialized human talent.
                 </p>
               </div>
             </Reveal>

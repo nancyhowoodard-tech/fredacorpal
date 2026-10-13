@@ -93,9 +93,7 @@ function Pricing() {
                 ) : null}
                 <h3 className="font-display text-2xl font-bold">{tier.name}</h3>
                 <p className="mt-3 text-sm text-muted-foreground">{tier.for}</p>
-                <p className="mt-6 font-display text-3xl font-bold text-gold">
-                  Custom Pricing
-                </p>
+                <p className="mt-6 font-display text-3xl font-bold text-gold">Custom Pricing</p>
                 <ul className="mt-6 flex-1 space-y-3">
                   {tier.includes.map((inc) => (
                     <li key={inc} className="flex gap-3 text-sm text-muted-foreground">
@@ -119,9 +117,9 @@ function Pricing() {
 
         <Reveal className="mt-12">
           <p className="mx-auto max-w-2xl text-center text-sm leading-relaxed text-muted-foreground">
-            Every enterprise has different infrastructure requirements. Pricing is
-            determined by scope, delivery cadence and the specialists deployed — request
-            a consultation for a tailored proposal.
+            Every enterprise has different infrastructure requirements. Pricing is determined by
+            scope, delivery cadence and the specialists deployed — request a consultation for a
+            tailored proposal.
           </p>
         </Reveal>
       </Section>
