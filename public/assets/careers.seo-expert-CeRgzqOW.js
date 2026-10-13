@@ -1,0 +1,1 @@
+import{b as e}from"./Primitives-BAmySuA4.js";import{f as t}from"./index-BQ4b9KLU.js";import{t as n}from"./CareerDetail-Lk0tETUl.js";var r=e(),i=()=>(0,r.jsx)(n,{job:t});export{i as component};

@@ -1,0 +1,10 @@
+{
+  "name": "fredacorpal-production",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  }
+}

@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/beylpbplht/fredacorpal
+    - /bin/cp -R * $DEPLOYPATH/
+    - /bin/cp -a .htaccess $DEPLOYPATH/ 2>/dev/null || true
+    - /bin/cp -a .env $DEPLOYPATH/ 2>/dev/null || true
+    - /bin/cp -a .env.production $DEPLOYPATH/ 2>/dev/null || true
+    - /bin/mkdir -p $DEPLOYPATH/tmp
+    - /bin/touch $DEPLOYPATH/tmp/restart.txt

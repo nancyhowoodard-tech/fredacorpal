@@ -1,0 +1,1 @@
+import{b as e}from"./Primitives-BAmySuA4.js";import{t}from"./index-BQ4b9KLU.js";import{t as n}from"./ServiceDetail-BoTr00gp.js";var r=e(),i=()=>(0,r.jsx)(n,{service:t});export{i as component};
