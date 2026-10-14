@@ -1,1293 +1,263 @@
-# Fredacorpal Nexus
+# Fredacorpal™ Integrated Services
 
-MASTER PROMPT — BUILD FREDA CORPAL™ INTEGRATED SERVICES REACT WEBSITE
+<div align="center">
 
-You are an expert Senior React Engineer, UI/UX Designer, Product Designer, Brand Strategist, Conversion Specialist, and Enterprise Web Architect.
+<img src="public/fredlogo.svg" alt="Fredacorpal Logo" width="120" height="120" />
 
-Build a complete, production-quality multi-page React website for:
+### **"Connecting Talents, Building the Future."**
 
-Fredacorpal™ Integrated Services
+[![Production Status](https://img.shields.io/badge/Status-Production%20Ready-emerald?style=flat-square)](https://fredacorpal.world)
+[![Framework](https://img.shields.io/badge/Framework-TanStack%20Start%20%28React%2019%29-blue?style=flat-square)](https://tanstack.com/start)
+[![TypeScript](https://img.shields.io/badge/Language-TypeScript%205.8-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Styling](https://img.shields.io/badge/Styling-Tailwind%20CSS%20v4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Runtime](https://img.shields.io/badge/Runtime-Node.js%2020%2B%20%2F%20Nitro-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![License](https://img.shields.io/badge/License-Proprietary-slate?style=flat-square)](#intellectual-property--privacy)
 
-Brand positioning: Premium enterprise digital infrastructure, integrated marketing, technical services, remote talent, and strategic business partnerships.
+**[Visit Live Website →](https://fredacorpal.world)**
 
-Core brand message:
+</div>
 
-Connecting Talents, Building the Future.
+---
 
-The website must feel like a high-end global technology and enterprise infrastructure company, NOT a generic digital marketing agency.
+## 📌 Executive Overview
 
-The design should communicate:
+**Fredacorpal™ Integrated Services** is a modern, high-performance enterprise web application and digital infrastructure platform. Designed with executive authority, deep navy and metallic gold aesthetics, and resilient server-side rendering (SSR), it serves as the global gateway for prospective clients, partners, and high-caliber remote talent.
 
-Enterprise authority
+The platform provides an integrated operational ecosystem:
+- **8 Canonical Corporate Departments**: Structured taxonomy spanning strategic consulting, digital marketing, client support, technology solutions, operations, and financial governance.
+- **10 Core Integrated Services**: Comprehensive solutions portfolio with dedicated deep-dive briefs, problem statements, methodology timelines, deliverables, and service milestones.
+- **72 Open Career Positions**: Dynamic, department-filtered career catalog providing transparent compensation brackets, core competencies, and immediate application routing.
+- **40-Point Native Recruitment Intake Wizard**: A multi-step, verified candidate intake portal (`/apply`) with identity authentication, encrypted document uploads, and direct synchronization to Google Drive and Google Sheets.
+- **Enterprise AI Support Assistant**: Dual-engine concierge with an instant deterministic corporate knowledge engine and seamless Google Gemini LLM fallback.
+- **1-Click Git-Powered cPanel Deployment**: Native automated pipeline building and synchronizing production-ready SSR bundles directly to shared hosting (LiteSpeed / CloudLinux Passenger).
 
-Security
+---
 
-Technological sophistication
+## 🏛️ Organizational Architecture & Departments
 
-Premium service
+The enterprise taxonomy organizes all public operations, service lines, and talent pipelines into eight operating divisions:
 
-Global capability
+```mermaid
+graph TD
+    FC["Fredacorpal™ Integrated Services"]
+    
+    FC --> D1["01. Digital Growth & Marketing"]
+    FC --> D2["02. Client Experience & Support"]
+    FC --> D3["03. Technology & Digital Solutions"]
+    FC --> D4["04. Financial Advisory & Management"]
+    FC --> D5["05. Business Strategy & Consulting"]
+    FC --> D6["06. Business Development & Partnerships"]
+    FC --> D7["07. Operations & Service Delivery"]
+    FC --> D8["08. People & Corporate Services"]
 
-Operational reliability
-
-Elite talent
-
-Innovation
-
-Trust
-
-Exclusivity
-
-The website must be fully responsive across desktop, tablet, and mobile.
-
-1. TECHNOLOGY REQUIREMENTS
-
-Build the entire website using:
-
-React
-
-React Router
-
-Modern JavaScript/TypeScript
-
-Semantic HTML
-
-CSS modules, Tailwind CSS, or a well-organized global CSS architecture
-
-Reusable components
-
-Responsive layouts
-
-Accessible UI
-
-Clean component architecture
-
-SEO-friendly page structure
-
-Optimized images
-
-Smooth transitions and micro-interactions
-
-Do NOT build this as one giant component.
-
-Create reusable components such as:
-
-Navbar
-
-Footer
-
-Button
-
-SectionHeader
-
-Hero
-
-ServiceCard
-
-TestimonialCard
-
-JobCard
-
-PartnerCard
-
-ContactForm
-
-FAQ
-
-CTASection
-
-ThemeToggle
-
-Breadcrumbs
-
-PageLoader
-
-Modal
-
-PortalLogin
-
-MobileMenu
-
-Use a centralized design-token system for:
-
-Colors
-
-Typography
-
-Spacing
-
-Border radius
-
-Shadows
-
-Transitions
-
-Breakpoints
-
-2. BRAND DESIGN SYSTEM
-
-Use the following primary design tokens.
-
-Primary Colors
-
-Deep Navy: #0A192F
-Slate Navy: #172A45
-Metallic Gold: #D4AF37
-Gold Hover: #AA8C2C
-White: #FFFFFF
-Near Black: #1C1C1C
-
-Additional supporting colors may be introduced where necessary, but the visual identity must remain dominated by deep navy, white, and metallic gold.
-
-The metallic gold should be used strategically for:
-
-Primary CTAs
-
-Section accents
-
-Borders
-
-Icons
-
-Active states
-
-Important statistics
-
-Highlights
-
-Links
-
-Decorative lines
-
-Do not overuse gold.
-
-3. VISUAL STYLE
-
-Create a sophisticated enterprise technology + cybersecurity-inspired aesthetic.
-
-Use:
-
-Deep navy backgrounds
-
-White content areas
-
-Metallic gold accents
-
-Glassmorphism
-
-Subtle gradients
-
-Fine borders
-
-Large typography
-
-Spacious layouts
-
-Premium cards
-
-Soft shadows
-
-Subtle glow effects
-
-Minimal geometric patterns
-
-Network/node-inspired decorative graphics
-
-Abstract digital infrastructure visuals
-
-Professional corporate photography
-
-The website should feel like a combination of:
-
-Enterprise technology + cybersecurity + consulting + premium digital infrastructure + global talent network.
-
-Avoid:
-
-Cheap-looking gradients
-
-Excessive rounded cards
-
-Cartoon illustrations
-
-Generic startup aesthetics
-
-Excessive animations
-
-Neon cyberpunk styling
-
-Clutter
-
-Stock-photo-heavy layouts
-
-4. DARK MODE
-
-Implement a complete light/dark theme system.
-
-Default theme:
-
-Light mode
-
-Dark mode:
-
-Background: #0A192F
-Secondary: #172A45
-Text: #F4F6F9
-Muted text: #8892B0
-Gold: #D4AF37
-
-Theme switching must:
-
-Animate smoothly
-
-Persist using localStorage
-
-Respect the user's system preference on first visit
-
-Allow manual override
-
-Avoid flash of incorrect theme during loading
-
-Place a theme toggle in the navigation.
-
-5. GLOBAL NAVIGATION
-
-Create a sticky glassmorphic navigation bar.
-
-Desktop navigation:
-
-Logo | About | Services | Industries | Partnerships | Careers | Contact | Theme Toggle
-
-Primary CTA:
-
-Work With Us
-
-Secondary CTA:
-
-Join Our Team
-
-On mobile:
-
-Hamburger menu
-
-Full-screen or slide-down navigation
-
-Large touch targets
-
-Clear CTA buttons
-
-The navbar must remain visible while scrolling.
-
-6. IMPORTANT ROUTING REQUIREMENT
-
-THIS IS CRITICAL:
-
-Every button, navigation item, CTA, card CTA, footer link, and interactive navigation element must actually work.
-
-Do NOT create dead buttons.
-
-Use React Router.
-
-Every major destination must have its own page.
-
-Required routes:
-
-/
-/about
-/services
-/services/seo
-/services/social-media
-/services/paid-media
-/services/customer-support
-/services/technical-solutions
-/industries
-/partnerships
-/careers
-/careers/customer-care
-/careers/social-media-manager
-/careers/seo-expert
-/contact
-/pricing
-/staff-portal
-/privacy
-/terms
-/404
-
-Buttons must navigate to their appropriate destinations.
-
-Examples:
-
-Work With Us → /contact
-
-See Services → /services
-
-View Pricing → /pricing
-
-Join Our Team → /careers
-
-Explore SEO → /services/seo
-
-Explore Social Media → /services/social-media
-
-Explore Paid Media → /services/paid-media
-
-Partner With Us → /partnerships
-
-Contact Us → /contact
-
-Staff Portal → /staff-portal
-
-View Job → corresponding career page
-
-7. HOME PAGE
-
-Route:
-
-/
-
-Create a premium, high-conversion landing page.
-
-HERO
-
-Use a large enterprise office / technology infrastructure background image with a dark navy overlay.
-
-Headline:
-
-Fredacorpal™ Integrated Services
-
-Gold supporting line:
-
-Connecting Talents, Building the Future.
-
-Supporting copy:
-
-We integrate elite multi-channel performance marketing infrastructures to scale enterprises globally. From technical engine validation to complete organic platform architecture management, we construct the underlying pipelines that secure brand dominance.
-
-CTA buttons:
-
-Work With Us
-
-Join Our Team
-
-Secondary link:
-
-Explore Our Services
-
-Add subtle animated network/grid elements in the background.
-
-8. TRUST / STATISTICS STRIP
-
-Immediately below the hero create a premium statistics section.
-
-Example metrics:
-
-340% Growth
-
-42% Conversion Efficiency
-
-80K+ Audience Growth
-
-Global Talent Network
-
-Use animated counters where appropriate.
-
-Do not make unsupported claims beyond the information supplied.
-
-9. ABOUT SECTION
-
-Create a dedicated preview section on the homepage linking to:
-
-/about
-
-Heading:
-
-Engineering Growth. Connecting Talent. Building the Future.
-
-Explain that Fredacorpal operates at the intersection of:
-
-Digital infrastructure
-
-Performance marketing
-
-Technical expertise
-
-Remote talent
-
-Enterprise growth
-
-Automation
-
-Include Mission and Vision cards.
-
-Mission
-
-Connect elite remote technical talent networks with enterprise digital infrastructures to drive operational acceleration and verified search equity.
-
-Vision
-
-Establish Fredacorpal as a global standard for integrated service delivery through automated frameworks and specialized human talent.
-
-CTA:
-
-Discover Fredacorpal → /about
-
-10. SERVICES SECTION
-
-Homepage preview + dedicated Services page.
-
-Headline:
-
-Integrated Digital Infrastructure
-
-Display three primary service pillars prominently:
-
-01 — Search Engine Optimization
-
-Technical SEO, infrastructure audits, algorithmic keyword strategy, structured data, technical optimization and visibility architecture.
-
-CTA:
-
-Explore SEO → /services/seo
-
-02 — Social Media Architecture
-
-Multi-platform content management, scheduling, engagement systems, audience growth and community development.
-
-CTA:
-
-Explore Social Media → /services/social-media
-
-03 — Paid Ads & Media Acquisition
-
-Performance advertising, A/B testing, conversion optimization and multi-channel media acquisition.
-
-CTA:
-
-Explore Paid Media → /services/paid-media
-
-Also include:
-
-04 — Customer Support Deployment
-
-Remote customer-care systems and support operations.
-
-05 — Technical Solutions
-
-Technical infrastructure, optimization and digital implementation.
-
-Each card must link to its relevant service page.
-
-11. SERVICE DETAIL PAGES
-
-Every service must have a dedicated professional page.
-
-Each page should contain:
-
-Hero
-
-Problem statement
-
-What we do
-
-Methodology
-
-Deliverables
-
-Benefits
-
-Process
-
-Why Fredacorpal
-
-FAQ
-
-CTA
-
-Example SEO page:
-
-/services/seo
-
-Headline:
-
-Search Visibility Engineered for Long-Term Growth
-
-Include:
-
-Technical SEO
-
-Infrastructure audits
-
-Keyword architecture
-
-Structured data
-
-On-page optimization
-
-Technical performance
-
-Search visibility strategy
-
-CTA:
-
-Request SEO Consultation → /contact
-
-12. INDUSTRIES PAGE
-
-Route:
-
-/industries
-
-Create an enterprise industry overview.
-
-Industry cards:
-
-Technology
-
-E-Commerce
-
-Professional Services
-
-Startups
-
-Corporate Enterprises
-
-Creative Businesses
-
-B2B Organizations
-
-Each card should explain how Fredacorpal's infrastructure can support that industry.
-
-CTA:
-
-Discuss Your Industry → /contact
-
-13. SOCIAL PROOF
-
-Create a premium testimonial section.
-
-Use the following supplied testimonials:
-
-Marcus Vance
-
-COO, TechCorp Global Solutions
-
-Focus: SEO
-
-Highlight:
-
-340% growth inside 9 months
-
-Sarah Jenkins
-
-VP of Acquisition, Apex Ventures
-
-Focus: Paid Media
-
-Highlight:
-
-42% reduction in conversion overhead
-
-David Sterling
-
-Director of Strategy, Omnicor Group
-
-Focus: Customer Support Deployment
-
-Elena Rostova
-
-Founder, Rostova Design Lab
-
-Focus: Social Media Management
-
-Highlight:
-
-80K audience growth
-
-Julian Thorne
-
-Principal Consultant, Thorne Advisors
-
-Focus: Technical SEO
-
-Highlight:
-
-High-tier architecture consulting without enterprise budget overhead.
-
-Clara Amari
-
-E-Commerce Merchant, Amari Collections
-
-Focus: Operational Reliability
-
-Use professional testimonial cards with:
-
-Avatar
-
-Name
-
-Position
-
-Company
-
-Service
-
-Rating
-
-Testimonial
-
-Metric
-
-14. PARTNERSHIPS PAGE
-
-Route:
-
-/partnerships
-
-Headline:
-
-Build More. Deliver More. Scale Together.
-
-Position Fredacorpal as an infrastructure partner for:
-
-Verified business ecosystems
-
-B2B resellers
-
-International vendor pools
-
-White-label agencies
-
-Strategic partners
-
-Explain the enterprise-grade partnership model.
-
-Include:
-
-White-Label Services
-
-Talent Infrastructure
-
-Enterprise Packages
-
-Strategic Collaboration
-
-CTA:
-
-Become a Partner → /contact
-
-15. CAREERS PAGE
-
-Route:
-
-/careers
-
-Headline:
-
-Join the Workforce
-
-Subheading:
-
-Elite Talent. Remote Opportunity. Global Impact.
-
-Display available positions.
-
-Customer Care Assistant
-
-Responsibilities:
-
-Customer ticket management
-
-Live support
-
-Client satisfaction
-
-Cross-channel communication
-
-CTA:
-
-View Position → /careers/customer-care
-
-Social Media Manager
-
-Responsibilities:
-
-Content scheduling
-
-Asset distribution
-
-Engagement
-
-Multi-platform management
-
-CTA:
-
-View Position → /careers/social-media-manager
-
-SEO Expert
-
-Responsibilities:
-
-Technical SEO
-
-Code optimization
-
-Structural audits
-
-Visibility mapping
-
-Employment type:
-
-Contract Basis
-
-CTA:
-
-View Position → /careers/seo-expert
-
-16. CAREER DETAIL PAGES
-
-Each job must have a dedicated page.
-
-Example:
-
-/careers/seo-expert
-
-Include:
-
-Job title
-
-Employment type
-
-Remote status
-
-Role overview
-
-Responsibilities
-
-Required skills
-
-Preferred experience
-
-Application process
-
-FAQ
-
-Application CTA
-
-CTA:
-
-Apply Now
-
-The application button should lead to a functional application interface or application page.
-
-Do not leave it as a dead button.
-
-17. PRICING PAGE
-
-Route:
-
-/pricing
-
-Create a premium pricing/consultation page.
-
-Do NOT invent exact prices if they are not supplied.
-
-Instead create:
-
-Strategic
-
-For businesses beginning their digital transformation.
-
-Growth
-
-For organizations scaling existing digital operations.
-
-Enterprise
-
-For organizations requiring integrated infrastructure.
-
-Display:
-
-Custom Pricing
-
-and explain:
-
-Every enterprise has different infrastructure requirements. Request a consultation for a tailored proposal.
-
-Buttons:
-
-Request Pricing → /contact
-
-Talk to an Expert → /contact
-
-18. CONTACT PAGE
-
-Route:
-
-/contact
-
-Create a professional enterprise contact experience.
-
-Fields:
-
-Full Name
-
-Company
-
-Email
-
-Phone
-
-Service Required
-
-Budget Range
-
-Message
-
-Dropdown:
-
-SEO
-Social Media
-Paid Media
-Customer Support
-Technical Solutions
-Partnership
-Other
-
-CTA:
-
-Submit Inquiry
-
-Include alternate contact channels where appropriate.
-
-Create success and error states.
-
-The form should have proper validation.
-
-19. STAFF PORTAL
-
-Route:
-
-/staff-portal
-
-Create a visually distinct restricted-access login interface.
-
-Heading:
-
-Fredacorpal™ Staff Portal
-
-Subtitle:
-
-Restricted access point for authenticated Fredacorpal™ administrative crew members, remote agents, and onsite project leads.
-
-Fields:
-
-Email / Staff ID
-
-Password
-
-Buttons:
-
-Sign In
-
-Forgot Password
-
-Include a security-focused visual design.
-
-This is a frontend interface only unless authentication/backend functionality is explicitly implemented.
-
-20. FOOTER
-
-Create a premium four-column footer.
-
-Company
-
-About
-
-Services
-
-Industries
-
-Partnerships
-
-Careers
-
-Services
-
-SEO
-
-Social Media
-
-Paid Media
-
-Customer Support
-
-Technical Solutions
-
-Resources
-
-Pricing
-
-Contact
-
-Privacy Policy
-
-Terms
-
-Staff
-
-Create a special highlighted portal card:
-
-Fredacorpal™ Staff Portal
-
-Restricted access for authenticated team members.
-
-Button:
-
-Staff Login → /staff-portal
-
-Footer should include:
-
-© 2026 Fredacorpal™ Integrated Services. All rights reserved.
-
-21. PRIVACY & TERMS
-
-Create functional pages:
-
-/privacy
-/terms
-
-Use clean legal-document layouts.
-
-Include breadcrumbs and a CTA back to the main website.
-
-22. 404 PAGE
-
-Create a custom premium 404 page.
-
-Headline:
-
-404 — Infrastructure Not Found
-
-Supporting copy:
-
-The requested destination could not be located within the Fredacorpal network.
-
-Buttons:
-
-Return Home → /
-
-Contact Support → /contact
-
-23. RESPONSIVE DESIGN
-
-The website must be exceptional on:
-
-320px mobile
-
-375px mobile
-
-414px mobile
-
-Tablet
-
-1366px desktop
-
-1440px desktop
-
-1920px desktop
-
-Ultra-wide screens
-
-Use fluid typography and responsive grids.
-
-Never allow:
-
-Horizontal overflow
-
-Broken navigation
-
-Text clipping
-
-Overlapping buttons
-
-Broken cards
-
-Unreadable typography
-
-24. ANIMATIONS
-
-Use restrained premium animations.
-
-Include:
-
-Fade-in sections
-
-Scroll reveal
-
-Card hover elevation
-
-Gold border animations
-
-Subtle background movement
-
-Button hover transitions
-
-Number counters
-
-Smooth page transitions
-
-Mobile menu animation
-
-Keep animations fast and sophisticated.
-
-Use approximately:
-
-0.3s – 0.5s
-
-Avoid excessive motion.
-
-Respect:
-
-prefers-reduced-motion
-
-25. ACCESSIBILITY
-
-Follow modern accessibility standards.
-
-Implement:
-
-Semantic HTML
-
-Proper heading hierarchy
-
-ARIA labels where necessary
-
-Keyboard navigation
-
-Visible focus states
-
-Accessible contrast
-
-Form labels
-
-Error messages
-
-Alt text
-
-Reduced motion support
-
-26. SEO
-
-Each route must have:
-
-Unique <title>
-
-Meta description
-
-Open Graph metadata
-
-Proper heading structure
-
-Canonical URL structure
-
-Semantic HTML
-
-Example:
-
-Home title:
-
-Fredacorpal™ Integrated Services | Connecting Talents, Building the Future
-
-SEO title:
-
-Enterprise SEO & Search Infrastructure | Fredacorpal™
-
-Careers:
-
-Careers | Join the Fredacorpal™ Workforce
-
-27. COMPONENT ARCHITECTURE
-
-Organize the React application professionally.
-
-Suggested structure:
-
-src/
-├── components/
-│ ├── Navbar
-│ ├── Footer
-│ ├── Hero
-│ ├── Button
-│ ├── ServiceCard
-│ ├── TestimonialCard
-│ ├── JobCard
-│ ├── CTASection
-│ ├── SectionHeader
-│ └── ThemeToggle
-│
-├── pages/
-│ ├── Home
-│ ├── About
-│ ├── Services
-│ ├── ServiceSEO
-│ ├── ServiceSocial
-│ ├── ServicePaidMedia
-│ ├── ServiceSupport
-│ ├── ServiceTechnical
-│ ├── Industries
-│ ├── Partnerships
-│ ├── Careers
-│ ├── CareerCustomerCare
-│ ├── CareerSocialMedia
-│ ├── CareerSEO
-│ ├── Pricing
-│ ├── Contact
-│ ├── StaffPortal
-│ ├── Privacy
-│ ├── Terms
-│ └── NotFound
-│
-├── data/
-│ ├── services
-│ ├── testimonials
-│ ├── careers
-│ └── industries
-│
-├── styles/
-│ └── globals
-│
-├── App
-└── main
-
-28. DATA-DRIVEN CONTENT
-
-Do not hard-code repeated cards individually.
-
-Create data arrays for:
-
-Services
-
-Testimonials
-
-Careers
-
-Industries
-
-Navigation
-
-Footer links
-
-Render them through reusable React components.
-
-This makes the website easy to maintain.
-
-29. BUTTON & LINK AUDIT
-
-Before completing the project, perform a complete navigation audit.
-
-Every clickable element must have a destination.
-
-Check:
-
-Navbar links
-
-Hero buttons
-
-Service cards
-
-Service buttons
-
-Testimonial links if present
-
-Partnership CTA
-
-Career cards
-
-Job application buttons
-
-Pricing buttons
-
-Contact buttons
-
-Footer links
-
-Staff portal
-
-Legal links
-
-404 links
-
-Mobile navigation
-
-There must be ZERO dead buttons.
-
-Do not use:
-
-href="#"
-
-for functional buttons.
-
-Do not use:
-
-javascript:void(0)
-
-for navigation.
-
-Use React Router routes.
-
-30. DESIGN QUALITY BAR
-
-The final result should look like a website designed by a top-tier enterprise digital agency, not an AI-generated template.
-
-Prioritize:
-
-Visual hierarchy
-
-Conversion
-
-Brand consistency
-
-Responsive behavior
-
-Accessibility
-
-Performance
-
-Clear information architecture
-
-Professional typography
-
-Strong interaction design
-
-Functional navigation
-
-The final experience should communicate:
-
-Fredacorpal is not simply another marketing agency. It is an integrated infrastructure for enterprise growth, technical capability, and elite human talent.
-
-Build the complete application, including all pages, routing, responsive layouts, reusable components, forms, dark mode, animations, navigation, footer, and functional internal links.
-
-Create the full React application in one pass, then perform a second pass specifically for route/link auditing and responsive QA.
-Do not stop after creating the homepage.
-
-Build the entire website.
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/3dc859df-0d0e-4639-b5b1-071ada0209d3).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+    D1 --> S1["SEO, Social Media, Paid Acquisition"]
+    D2 --> S2["Customer Support Deployment"]
+    D3 --> S3["Technical Solutions & Infrastructure"]
+    D4 --> S4["Strategic Corporate Financial Advisory"]
+    D5 --> S5["Enterprise Transformation & Consulting"]
+    D6 --> S6["Partnerships & Commercial Alliances"]
+    D7 --> S7["Operations & Service Delivery"]
+    D8 --> S8["Global Talent Acquisition & Workforce"]
 ```
+
+| Index | Department | Core Focus & Purpose | Active Services | Active Careers |
+| :--- | :--- | :--- | :--- | :--- |
+| **01** | **Digital Growth & Marketing** | Organic discovery, algorithmic social architectures, audience acquisition, and paid media performance. | [SEO](/services/seo), [Social Media](/services/social-media), [Paid Media](/services/paid-media) | SEO Expert, Social Media Manager, Paid Media Specialist, +7 more |
+| **02** | **Client Experience & Support** | Managed multi-channel support, live chat operations, and client success delivery. | [Customer Support Deployment](/services/customer-support) | Customer Care Assistant, Technical Support Specialist, +7 more |
+| **03** | **Technology & Digital Solutions** | Scalable web architectures, API middleware, platform automation, Core Web Vitals, and system reliability. | [Technical Solutions](/services/technical-solutions) | Full-Stack Engineer, Web Developer, Automation Specialist, +10 more |
+| **04** | **Financial Advisory & Management** | Corporate cash-flow modeling, capital allocation, liquidity risk, and fiduciary governance advisory. *(Non-retail)* | [Strategic Financial Advisory](/services/financial-advisory) | Financial Analyst, Controller, Risk & Compliance Analyst, +6 more |
+| **05** | **Business Strategy & Consulting** | Commercial advisory, organizational design, business process re-engineering, and strategic transformation. | [Strategy & Consulting](/services/strategy-consulting) | Strategy Consultant, Business Analyst, BI Specialist, +7 more |
+| **06** | **Business Development & Partnerships** | Commercial alliances, enterprise co-delivery agreements, joint ventures, and account stewardship. | [Business Development](/services/business-development) | Partnerships Manager, Account Executive, Sales Strategist, +8 more |
+| **07** | **Operations & Service Delivery** | Cross-department workflow execution, quality assurance frameworks, and service-level agreement governance. | [Operations Delivery](/services/operations-delivery) | Operations Manager, QA Specialist, Workforce Coordinator, +9 more |
+| **08** | **People & Corporate Services** | Distributed talent acquisition, candidate onboarding governance, and corporate compliance operations. | [Talent Solutions](/services/talent-solutions) | Talent Acquisition Specialist, HR Compliance Specialist, +8 more |
+
+> **Regulatory Disclaimer (Department 04):** Financial Advisory services are limited to corporate financial management, capital planning, and governance modeling. Fredacorpal™ does not provide retail investment advice, individual trading tips, or cryptocurrency speculation.
+
+---
+
+## 🛠️ Technology Stack
+
+| Layer | Technologies | Purpose |
+| :--- | :--- | :--- |
+| **Full-Stack Framework** | [TanStack Start](https://tanstack.com/start) + [React 19](https://react.dev/) | Type-safe SSR, server functions, streaming hydration, and Nitro engine. |
+| **Routing** | [TanStack Router](https://tanstack.com/router) | 100% type-safe file-based client/server routing with code splitting. |
+| **Styling & UI** | [Tailwind CSS v4](https://tailwindcss.com/), [Radix UI](https://www.radix-ui.com/), [Lucide React](https://lucide.dev/) | Enterprise dark/light luxury theme, accessible components, micro-animations. |
+| **Data & State** | [TanStack Query](https://tanstack.com/query), [React Hook Form](https://react-hook-form.com/), [Zod](https://zod.dev/) | Reactive asynchronous queries, strict schema validation, form state control. |
+| **AI Integration** | [Vercel AI SDK](https://sdk.vercel.ai/), [Google Gemini](https://ai.google.dev/) | Hybrid conversational concierge with deterministic knowledge base fallback. |
+| **Storage & Backend** | [Supabase](https://supabase.com/), [Google Drive & Sheets API](https://developers.google.com/apps-script) | Candidate metadata persistence, secure resume & ID document vaulting. |
+| **Server & Hosting** | [Nitro Engine](https://nitro.unjs.io/), [CloudLinux Passenger](https://www.phusionpassenger.com/) | Standalone Node.js server optimized for Spaceship / cPanel LiteSpeed hosting. |
+
+---
+
+## 📂 Project Structure
+
+```text
+fredacorpal-nexus/
+├── .output/                     # Nitro production build artifacts
+│   ├── public/                  # Compiled client bundles & static assets
+│   └── server/                  # Compiled Node.js SSR server worker
+├── deploy-cpanel/               # Staging directory for automated cPanel releases
+├── public/                      # Static public web assets
+│   ├── apple-touch-icon.png     # iOS touch icon (180x180)
+│   ├── favicon.svg              # Self-contained Base64-embedded vector favicon
+│   ├── favicon.png              # High-DPI raster favicon fallback
+│   ├── fredlogo.svg             # Official self-contained Base64 vector logo
+│   ├── fredlogo.png             # Master 512x512 logo artwork
+│   ├── robots.txt               # Search engine crawl directives
+│   └── sitemap.xml              # Canonical XML sitemap for SEO indexing
+├── scripts/                     # Automation & deployment toolchain
+│   ├── deploy-git.mjs           # 1-Click push-to-production Git deployment
+│   ├── generate-assets.mjs      # SVG base64 vector & raster asset compiler
+│   ├── google-apps-script.js    # Google Apps Script webhook integration
+│   └── package-cpanel.mjs       # Production bundle packager with .htaccess & env
+├── src/                         # Application source code
+│   ├── components/              # Reusable UI component architecture
+│   │   ├── Button.tsx           # Luxury styled polymorphic CTA buttons
+│   │   ├── Cards.tsx            # ServiceCard, JobCard, PartnerCard components
+│   │   ├── CareerDetail.tsx     # Full-page job requisition template
+│   │   ├── ChatBot.tsx          # Interactive AI support concierge widget
+│   │   ├── Footer.tsx           # Global footer with 8-department directory
+│   │   ├── Navbar.tsx           # Sticky desktop navbar & mobile drawer
+│   │   ├── Primitives.tsx       # Core brand logo, badges, CTA banners
+│   │   ├── ServiceDetail.tsx    # Comprehensive service deep-dive template
+│   │   └── ThemeToggle.tsx      # Dark/Light enterprise theme switch
+│   ├── data/                    # Authoritative corporate data catalogs
+│   │   └── site.ts              # 8 Departments, 10 Services, 72 Careers data
+│   ├── integrations/            # External backend & database integrations
+│   │   └── supabase/            # Client initialization & database types
+│   ├── lib/                     # Server functions & business logic
+│   │   ├── application.functions.ts # 40-Point candidate submission pipeline
+│   │   ├── constants.ts         # Central environment constants & portal URLs
+│   │   └── support-bot.ts       # AI knowledge base & conversational engine
+│   ├── routes/                  # File-based TanStack routes
+│   │   ├── __root.tsx           # Root document layout with meta & theme
+│   │   ├── index.tsx            # Homepage with hero, services, metrics & FAQ
+│   │   ├── about.tsx            # Corporate mission, values & executive story
+│   │   ├── apply.tsx            # 40-Point recruitment application wizard
+│   │   ├── careers.index.tsx    # 72-role career directory with department filters
+│   │   ├── contact.tsx          # Enterprise client inquiry intake
+│   │   ├── departments.tsx      # Interactive 8-department interactive directory
+│   │   ├── industries.tsx       # Industry specialization briefs
+│   │   ├── partnerships.tsx     # Strategic commercial alliance agreements
+│   │   ├── pricing.tsx          # Transparent service retainer tiers
+│   │   ├── services.index.tsx   # Integrated 10-service portfolio directory
+│   │   └── api/support-chat.ts  # Concierge API handler endpoint
+│   ├── start.ts                 # TanStack Start application entrypoint
+│   └── styles.css               # Global theme tokens, typography & CSS variables
+├── .cpanel.yml                  # cPanel continuous deployment task hook
+├── .env                         # Production environment variables (git-ignored)
+├── .htaccess                    # LiteSpeed / Apache proxy-aware HTTPS & HSTS
+├── app.js                       # CloudLinux Passenger startup entrypoint
+├── package.json                 # Project dependencies & build commands
+└── vite.config.ts               # Vite & Nitro compilation configuration
+```
+
+---
+
+## 🚀 Quickstart & Local Development
+
+### Prerequisites
+- **Node.js**: v20.x or v22.x LTS
+- **Package Manager**: `npm` (v10+) or `bun`
+
+### Installation & Setup
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/nancyhowoodard-tech/fredacorpal.git
+   cd fredacorpal
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Configure Environment Variables**:
+   Create a local `.env` file in the root directory:
+   ```env
+   # Core Application URL
+   VITE_APP_URL="http://localhost:8080"
+   
+   # Public Communications
+   CONTACT_EMAIL="admin@fredacorpal.world"
+   RECRUITMENT_EMAIL="admin@fredacorpal.world"
+   
+   # Decoupled Staff Portal
+   VITE_PORTAL_URL="https://portal.fredacorpal.com"
+   
+   # Recruitment Webhook (Google Apps Script)
+   APPLICATIONS_WEBHOOK_URL="https://script.google.com/macros/s/AKfycbzwf_8bP6-T19lbhr8darpKO7oVAm9vosse0QY7j1odwx_yVsdZEHikXWoF3dIUrjJ5kg/exec"
+   
+   # Optional: Google Gemini AI API Key for live dynamic reasoning
+   GOOGLE_GENERATIVE_AI_API_KEY=""
+   ```
+
+4. **Launch development server**:
+   ```bash
+   npm run dev
+   ```
+   Open **`http://localhost:8080`** in your browser.
+
+---
+
+## 🚢 Deployment Architecture (Spaceship / cPanel)
+
+The platform features an automated, zero-downtime deployment pipeline designed for **Spaceship Shared Hosting** powered by **cPanel** and **CloudLinux Passenger**.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Dev as Developer / Antigravity
+    participant Git as GitHub (nancyhowoodard-tech)
+    participant cPanel as Spaceship cPanel
+    participant Passenger as CloudLinux / LiteSpeed
+    participant Live as https://fredacorpal.world
+
+    Dev->>Dev: npm run deploy
+    Note over Dev: Builds standalone Nitro server<br/>Packages .htaccess, .env & logos
+    Dev->>Git: Force-push precompiled bundle to 'production' branch
+    cPanel->>Git: Pull from 'production' branch via Git™ Version Control
+    cPanel->>cPanel: Execute .cpanel.yml (Syncs files & updates tmp/restart.txt)
+    Passenger->>Passenger: Detects restart.txt & gracefully reloads worker
+    Passenger->>Live: Live site updated in 3 seconds!
+```
+
+### 1-Click Deployment Command
+Whenever you or Antigravity make updates, simply run:
+```bash
+npm run deploy
+```
+*(or run `npm run deploy:cpanel`)*
+
+This command automatically:
+1. Optimizes vector graphics, embeds self-contained SVGs, and builds the Node.js Nitro server bundle.
+2. Stages `app.js`, `.htaccess` (with proxy-aware HTTPS rules & HSTS), `.env`, and `tmp/restart.txt`.
+3. Pushes the release directly to the **`production`** branch on GitHub.
+4. Leaves your development `main` branch clean and undisturbed.
+
+### Pulling in cPanel
+1. Open **cPanel** $\rightarrow$ **Git™ Version Control** $\rightarrow$ Click **Manage** next to `fredacorpal`.
+2. Go to the **Pull or Deploy** tab.
+3. Click **"Update from Remote"** followed by **"Deploy HEAD Commit"**.
+4. The site updates instantly with zero downtime.
+
+---
+
+## 🔒 Security, Privacy & Compliance Controls
+
+- **Strict Identity Authentication Protocol**: The 40-point candidate intake process (`/apply`) collects mandatory identity verification data (SSN card, Driver's License, references) in compliance with US remote workforce onboarding standards.
+- **Data Boundary & Decoupling**: All internal employee notifications, administrative Google Sheets, and candidate document vaults are managed on secure, private backend channels (`nancyhowoodard@gmail.com`). This address is **never exposed** in client-facing code, network payloads, or public email headers.
+- **Public Fiduciary Contact**: All public client communications, sales inquiries, and candidate support are routed exclusively through:
+  ```text
+  admin@fredacorpal.world
+  ```
+- **Enterprise Transport Security**: Enforced via root `.htaccess` with 301 HTTPS redirects, HTTP Strict Transport Security (`max-age=31536000`), `X-Frame-Options: SAMEORIGIN`, and `X-Content-Type-Options: nosniff`.
+
+---
+
+## 📜 Intellectual Property & Privacy
+
+Copyright © 2026 **Fredacorpal™ Integrated Services**. All rights reserved.
+
+All proprietary trademarks, service marks, organizational taxonomies, visual branding, logos, and custom codebase architectures belong exclusively to Fredacorpal™ Integrated Services. Unauthorized reproduction, distribution, or public deployment of this proprietary platform is strictly prohibited.
